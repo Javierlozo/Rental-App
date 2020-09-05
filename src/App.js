@@ -1,10 +1,11 @@
 import React from "react";
-import { Router } from "@reach/router";
+import { Router, Link } from "@reach/router";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import SignUp from "./components/SignUp";
 import LogIn from "./components/LogIn";
+import Cards from "./components/Cards";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <SignUp path="/signup" component={SignUp} />
           <LogIn path="/login" component={LogIn} />
         </Router>
+        <Cards />
       </div>
     </div>
   );
