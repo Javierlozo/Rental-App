@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -86,7 +87,9 @@ export default function NavBar() {
             }}
           >
             <div>
-              <img src={img} height="120px"></img>
+              <Link to="/">
+                <img src={img} height="120px"></img>
+              </Link>
             </div>
           </Typography>
           {auth && (
@@ -133,10 +136,16 @@ export default function NavBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={logInOpen}>Log In</MenuItem>
-                <MenuItem onClick={signUpOpen}>Sign Up</MenuItem>
+                <Link to="/login">
+                  <MenuItem onClick={logInOpen}>Log In</MenuItem>
+                </Link>
+                <Link to="/signup">
+                  <MenuItem onClick={signUpOpen}>Sign Up</MenuItem>
+                </Link>
                 <hr></hr>
-                <MenuItem onClick={signUpOpen}>Add a Rental</MenuItem>
+                <Link to="/signup">
+                  <MenuItem onClick={signUpOpen}>Add a Rental</MenuItem>
+                </Link>
               </Menu>
             </div>
           )}

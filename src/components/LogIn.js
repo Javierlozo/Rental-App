@@ -12,7 +12,12 @@ import Grid from "@material-ui/core/Grid";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import imgb from "../images/LogIn.jpg";
 import img from "../images/Surf1.jpg";
+import PoolIcon from "@material-ui/icons/Pool";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import EmailIcon from "@material-ui/icons/Email";
+import VpnKeyIcon from "@material-ui/icons/VpnKey";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: "brown",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -44,6 +49,13 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: "grey",
+  },
+  back: {
+    backgroundImage: `url(${imgb})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "1000px",
+    backgroundPosition: "center",
   },
 }));
 
@@ -54,17 +66,26 @@ export default function LogIn() {
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+      <Grid
+        item
+        xs={12}
+        sm={8}
+        md={5}
+        className={classes.back}
+        component={Paper}
+        elevation={6}
+        square
+      >
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockOpenIcon />
+            <PoolIcon fontSize="medium" />
           </Avatar>
           <Typography component="h1" variant="h5">
             Log In
           </Typography>
           <form className={classes.form} noValidate>
             <TextField
-              variant="outlined"
+              variant="filled"
               margin="normal"
               required
               fullWidth
@@ -72,10 +93,18 @@ export default function LogIn() {
               label="Email Address"
               name="email"
               autoComplete="email"
+              color="secondary"
               autoFocus
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <EmailIcon />
+                  </InputAdornment>
+                ),
+              }}
             />
             <TextField
-              variant="outlined"
+              variant="filled"
               margin="normal"
               required
               fullWidth
@@ -84,16 +113,23 @@ export default function LogIn() {
               type="password"
               id="password"
               autoComplete="current-password"
+              color="secondary"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <VpnKeyIcon />
+                  </InputAdornment>
+                ),
+              }}
             />
             <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
+              control={<Checkbox value="remember" color="secundary" />}
               label="Remember me"
             />
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
               className={classes.submit}
             >
               Log In

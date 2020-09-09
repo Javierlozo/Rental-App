@@ -12,7 +12,12 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import DirectionsBikeIcon from "@material-ui/icons/DirectionsBike";
 import img from "../images/Bike1.jpg";
+import imgb from "../images/SignUp2.jpg";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import EmailIcon from "@material-ui/icons/Email";
+import VpnKeyIcon from "@material-ui/icons/VpnKey";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: "brown",
   },
   form: {
     width: "100%", // Fix IE 11 issue.
@@ -44,6 +49,13 @@ const useStyles = makeStyles((theme) => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2),
+    backgroundColor: "grey",
+  },
+  back: {
+    backgroundImage: `url(${imgb})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "left",
   },
 }));
 
@@ -54,10 +66,19 @@ export default function SignUp() {
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+      <Grid
+        item
+        xs={12}
+        sm={8}
+        md={5}
+        className={classes.back}
+        component={Paper}
+        elevation={6}
+        square
+      >
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
+            <DirectionsBikeIcon fontSize="medium" />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign Up
@@ -68,46 +89,64 @@ export default function SignUp() {
                 <TextField
                   autoComplete="fname"
                   name="firstName"
-                  variant="outlined"
+                  variant="standard"
                   required
                   fullWidth
                   id="firstName"
                   label="First Name"
+                  color="secondary"
                   autoFocus
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  variant="outlined"
+                  variant="standard"
                   required
                   fullWidth
                   id="lastName"
                   label="Last Name"
                   name="lastName"
+                  color="secondary"
                   autoComplete="lname"
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  variant="outlined"
+                  variant="filled"
                   required
                   fullWidth
                   id="email"
                   label="Email Address"
                   name="email"
+                  color="secondary"
                   autoComplete="email"
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <EmailIcon />
+                      </InputAdornment>
+                    ),
+                  }}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
-                  variant="outlined"
+                  variant="filled"
                   required
                   fullWidth
                   name="password"
                   label="Password"
                   type="password"
                   id="password"
+                  color="secondary"
                   autoComplete="current-password"
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <VpnKeyIcon />
+                      </InputAdornment>
+                    ),
+                  }}
                 />
               </Grid>
             </Grid>
@@ -115,7 +154,6 @@ export default function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
               className={classes.submit}
             >
               Sign Up

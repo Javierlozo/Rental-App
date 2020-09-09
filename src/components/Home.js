@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import img from "../images/Kayak.jpg";
+import Cards from "../components/Cards";
 
 const useStyles = makeStyles((theme) => ({
   home: {
