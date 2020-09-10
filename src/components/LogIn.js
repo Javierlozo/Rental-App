@@ -18,6 +18,7 @@ import PoolIcon from "@material-ui/icons/Pool";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import EmailIcon from "@material-ui/icons/Email";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
+import SignUp from "./SignUp";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -141,8 +142,8 @@ export default function LogIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                <Link href="/signup" variant="body2">
+                  Don't have an account? Sign Up
                 </Link>
               </Grid>
             </Grid>

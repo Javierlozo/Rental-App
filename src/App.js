@@ -14,14 +14,8 @@ function App() {
   return (
     <div className="App">
       <div>
-        <NavBar />
-        <Router>
-          <Home path="/" />
-          <SignUp path="/signup" />
-          <LogIn path="/login" />
-        </Router>
-        <Cards />
-        <DashBoard path="/dashboard" />
+        <PublicRoutes />
+        {/* <DashBoard path="/dashboard" /> */}
       </div>
     </div>
   );

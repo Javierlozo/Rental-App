@@ -13,7 +13,9 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
-import img from "../images/Surf1.jpg";
+import imgS from "../images/Surf2.jpg";
+import imgK from "../images/Kayak2.jpg";
+import imgB from "../images/Bike3.jpg";
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -32,13 +34,48 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     display: "flex",
     flexDirection: "column",
+    borderRadius: "20px",
   },
   cardMedia: {
-    paddingTop: "56.25%", // 16:9
+    // paddingTop: "56.25%", // 16:9
   },
-  cardContent: {
+  cardContentS: {
     flexGrow: 1,
+    paddingTop: "120px", // 16:9
+    backgroundImage: `url(${imgS})`,
+    backgroundSize: "cover",
+    minHeight: "60vh",
+    backgroundPosition: "center",
+    backgroundAttachment: "scroll",
   },
+  cardContentK: {
+    flexGrow: 1,
+    paddingTop: "120px", // 16:9
+    backgroundImage: `url(${imgK})`,
+    backgroundSize: "cover",
+    minHeight: "50vh",
+    backgroundPosition: "center",
+    backgroundAttachment: "scroll",
+  },
+  cardContentB: {
+    flexGrow: 1,
+    paddingTop: "120px", // 16:9
+    backgroundImage: `url(${imgB})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundAttachment: "scroll",
+  },
+  typo: {
+    display: "flex",
+    flexDirection: "column",
+    alignContent: "center",
+    alignItems: "center",
+    backgroundColor: "black",
+    opacity: 0.6,
+    width: "100%",
+    color: "white",
+  },
+
   footer: {
     // backgroundColor: theme.palette.background.paper,
     backgroundColor: "lightgrey",
@@ -77,17 +114,18 @@ export default function Cards({ card }) {
         </div>
         <Container className={classes.cardGrid}>
           {/* End hero unit */}
-          <Grid container spacing={3}>
+          <Grid container spacing={5}>
             {/* Surf Card */}
             <Grid item key={card} xs={4}>
               <Card className={classes.card}>
-                <CardMedia
-                  className={classes.cardMedia}
-                  src="url(./images/Bike.jpg)"
-                  title="Image title"
-                />
-                <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2">
+                <CardMedia className={classes.cardMedia} title="Surfboard" />
+                <CardContent className={classes.cardContentS}>
+                  <Typography
+                    className={classes.typo}
+                    gutterBottom
+                    variant="h4"
+                    component="h2"
+                  >
                     Surfboards
                   </Typography>
                 </CardContent>
@@ -96,13 +134,14 @@ export default function Cards({ card }) {
             {/* Surf Card */}
             <Grid item key={card} xs={4}>
               <Card className={classes.card}>
-                <CardMedia
-                  className={classes.cardMedia}
-                  image="https://source.unsplash.com/random"
-                  title="Image title"
-                />
-                <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2">
+                <CardMedia className={classes.cardMedia} title="Kayaks" />
+                <CardContent className={classes.cardContentK}>
+                  <Typography
+                    className={classes.typo}
+                    gutterBottom
+                    variant="h4"
+                    component="h2"
+                  >
                     Kayaks
                   </Typography>
                 </CardContent>
@@ -111,13 +150,14 @@ export default function Cards({ card }) {
             {/* Bike Card */}
             <Grid item key={card} xs={4}>
               <Card className={classes.card}>
-                <CardMedia
-                  className={classes.cardMedia}
-                  image="https://source.unsplash.com/random"
-                  title="Image title"
-                />
-                <CardContent className={classes.cardContent}>
-                  <Typography gutterBottom variant="h5" component="h2">
+                <CardMedia className={classes.cardMedia} title="Bikes" />
+                <CardContent className={classes.cardContentB}>
+                  <Typography
+                    className={classes.typo}
+                    gutterBottom
+                    variant="h4"
+                    component="h2"
+                  >
                     Bikes
                   </Typography>
                 </CardContent>

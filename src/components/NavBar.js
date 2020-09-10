@@ -136,14 +136,26 @@ export default function NavBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <Link to="/login">
+                <Link
+                  to="/login"
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                  }}
+                >
                   <MenuItem onClick={logInOpen}>Log In</MenuItem>
                 </Link>
-                <Link to="/signup">
+                <Link
+                  to="/signup"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <MenuItem onClick={signUpOpen}>Sign Up</MenuItem>
                 </Link>
                 <hr></hr>
-                <Link to="/signup">
+                <Link
+                  to="/signup"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <MenuItem onClick={signUpOpen}>Add a Rental</MenuItem>
                 </Link>
               </Menu>
