@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "rentalapp90b7950d": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

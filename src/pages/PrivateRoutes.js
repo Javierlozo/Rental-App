@@ -2,13 +2,21 @@ import React from "react";
 import { Router } from "@reach/router";
 import Home from "../components/Home";
 import NotFound from "../components/NotFound";
+import NavBar from "../components/NavBar";
+import DashBoard from "../components/DashBoard";
+import NavBarLogout from "../components/NavBarLogout";
 
 const PrivateRoutes = ({ signOut }) => {
   return (
-    <Router>
-      <Home path="/" signOut={signOut} />
-      <NotFound default />
-    </Router>
+    <div className="App">
+      <div>
+        <NavBarLogout />
+        <Router>
+          <DashBoard path="/dashboard" signOut={signOut} />
+          <NotFound default />
+        </Router>
+      </div>
+    </div>
   );
 };
 
