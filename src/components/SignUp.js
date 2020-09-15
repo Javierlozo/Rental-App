@@ -18,6 +18,8 @@ import imgb from "../images/SignUp2.jpg";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import EmailIcon from "@material-ui/icons/Email";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
+import { Link as RouteLink } from "@reach/router";
+import { Auth } from "aws-amplify";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,8 +61,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp(Set) {
+export default function SignUp() {
   const classes = useStyles();
+
+  const [signUpForm, setSignUpForm] = React.useState({
+    username: "",
+    password: "",
+    // confirmationCode: "",
+  });
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -83,10 +91,9 @@ export default function SignUp(Set) {
           <Typography component="h1" variant="h5">
             Sign Up
           </Typography>
-          <form className={classes.form} noValidate>
-            <Grid container spacing={3}>
-              <Grid item xs={12} sm={6}>
-                <TextField
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={6}>
+              {/* <TextField
                   autoComplete="fname"
                   name="firstName"
                   variant="standard"
@@ -108,64 +115,71 @@ export default function SignUp(Set) {
                   name="lastName"
                   color="secondary"
                   autoComplete="lname"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="filled"
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  color="secondary"
-                  autoComplete="email"
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <EmailIcon />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="filled"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  color="secondary"
-                  autoComplete="current-password"
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <VpnKeyIcon />
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              </Grid>
+                /> */}
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              className={classes.submit}
-            >
-              Sign Up
-            </Button>
-            <Grid container>
-              <Grid item>
-                <Link href="/login" variant="body2">
-                  {"Already have an account? Log In"}
-                </Link>
-              </Grid>
+            <Grid item xs={12}>
+              <TextField
+                onChange={(e) =>
+                  setSignUpForm({ ...signUpForm, username: e.target.value })
+                }
+                variant="filled"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                color="secondary"
+                autoComplete="email"
+                value={signUpForm.username}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <EmailIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              />
             </Grid>
-          </form>
+            <Grid item xs={12}>
+              <TextField
+                onChange={(e) =>
+                  setSignUpForm({ ...signUpForm, password: e.target.value })
+                }
+                variant="filled"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                color="secondary"
+                autoComplete="current-password"
+                value={signUpForm.password}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <VpnKeyIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </Grid>
+          </Grid>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            className={classes.submit}
+          >
+            Sign Up
+          </Button>
+          <Grid container>
+            <Grid item>
+              <Link href="/login" variant="body2">
+                {"Already have an account? Log In"}
+              </Link>
+            </Grid>
+          </Grid>
         </div>
       </Grid>
     </Grid>

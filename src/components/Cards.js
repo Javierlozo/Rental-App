@@ -115,7 +115,7 @@ export default function Cards({ card }) {
         <Container className={classes.cardGrid}>
           {/* End hero unit */}
           <Grid container spacing={5}>
-            {/* Surf Card */}
+            {/* SurfBoard Card */}
             <Grid item key={card} xs={4}>
               <Card className={classes.card}>
                 <CardMedia className={classes.cardMedia} title="Surfboard" />
@@ -131,7 +131,7 @@ export default function Cards({ card }) {
                 </CardContent>
               </Card>
             </Grid>
-            {/* Surf Card */}
+            {/* Kayak Card */}
             <Grid item key={card} xs={4}>
               <Card className={classes.card}>
                 <CardMedia className={classes.cardMedia} title="Kayaks" />

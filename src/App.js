@@ -1,7 +1,7 @@
 // import { withAuthenticator } from "@aws-amplify/ui-react";
 import React, { useEffect, useState } from "react";
 import { Auth } from "aws-amplify";
-import { Router, navigate, Link } from "@reach/router";
+import { Router, Link } from "@reach/router";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
@@ -11,6 +11,7 @@ import Cards from "./components/Cards";
 import DashBoard from "./components/DashBoard";
 import PrivateRoutes from "./pages/PrivateRoutes";
 import PublicRoutes from "./pages/PublicRoutes";
+import NavBarLogout from "./components/NavBarLogout";
 
 function App() {
   const [signedInUser, setSignedInUser] = useState(undefined);

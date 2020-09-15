@@ -70,8 +70,9 @@ export default function NavBarLogout({ signOut }) {
               aria-haspopup="true"
               color="inherit"
             >
-              <button onClick={signOut}>Logout</button>
+              {/* <button onClick={signOut}>Logout</button> */}
             </IconButton>
+            <button onClick={signOut}>Logout</button>
           </div>
         </Toolbar>
       </AppBar>

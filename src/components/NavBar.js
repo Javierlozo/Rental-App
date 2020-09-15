@@ -33,21 +33,21 @@ export default function NavBar() {
   const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [signup, setSignUpOpen] = React.useState(false);
-  const [login, setLogInOpen] = React.useState(false);
+  // const [signup, setSignUpOpen] = React.useState(false);
+  // const [login, setLogInOpen] = React.useState(false);
   const open = Boolean(anchorEl);
 
-  const signUpOpen = () => {
-    setSignUpOpen(true);
-  };
+  // const signUpOpen = () => {
+  //   setSignUpOpen(true);
+  // };
 
-  const logInOpen = () => {
-    setLogInOpen(true);
-  };
+  // const logInOpen = () => {
+  //   setLogInOpen(true);
+  // };
 
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
+  // const handleChange = (event) => {
+  //   setAuth(event.target.checked);
+  // };
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -131,20 +131,23 @@ export default function NavBar() {
                     color: "black",
                   }}
                 >
-                  <MenuItem onClick={logInOpen}>Log In</MenuItem>
+                  {/* <MenuItem onClick={logInOpen}>Log In</MenuItem> */}
+                  <MenuItem>Log In</MenuItem>
                 </Link>
                 <Link
                   to="/signup"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  <MenuItem onClick={signUpOpen}>Sign Up</MenuItem>
+                  {/* <MenuItem onClick={signUpOpen}>Sign Up</MenuItem> */}
+                  <MenuItem>Sign Up</MenuItem>
                 </Link>
                 <hr></hr>
                 <Link
                   to="/signup"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  <MenuItem onClick={signUpOpen}>Add a Rental</MenuItem>
+                  {/* <MenuItem onClick={signUpOpen}>Add a Rental</MenuItem> */}
+                  <MenuItem>Add a Rental</MenuItem>
                 </Link>
               </Menu>
             </div>

@@ -10,9 +10,9 @@ const PrivateRoutes = ({ signOut }) => {
   return (
     <div className="App">
       <div>
-        <NavBarLogout />
+        <NavBarLogout signOut={signOut} />
         <Router>
-          <DashBoard path="/dashboard" signOut={signOut} />
+          <DashBoard path="/dashboard" />
           <NotFound default />
         </Router>
       </div>

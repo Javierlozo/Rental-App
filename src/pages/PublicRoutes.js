@@ -32,9 +32,9 @@ const PublicRoutes = ({ signIn, setSignInForm, signInForm }) => {
             signInForm={signInForm}
           />
           <SignUp path="/signup" />
-          <NotFound default />
         </Router>
         <Cards />
+        <NotFound default />
       </div>
     </div>
   );
