@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NavBar() {
   const classes = useStyles();
-  const [auth, setAuth] = React.useState(true);
+  // const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   // const [signup, setSignUpOpen] = React.useState(false);
   // const [login, setLogInOpen] = React.useState(false);
@@ -80,78 +80,75 @@ export default function NavBar() {
               </Link>
             </div>
           </Typography>
-          {auth && (
-            <div>
-              <IconButton
+          {/* {auth && ( */}
+          <div>
+            <IconButton
+              style={{
+                marginRight: "20px",
+                paddingLeft: "20px",
+                backgroundColor: "grey",
+                borderRadius: "30px",
+                width: "90px",
+                height: "50px",
+              }}
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleMenu}
+              color="inherit"
+            >
+              <MenuIcon
                 style={{
-                  marginRight: "20px",
-                  paddingLeft: "20px",
-                  backgroundColor: "grey",
-                  borderRadius: "30px",
-                  width: "90px",
-                  height: "50px",
+                  width: "30px",
+                  height: "20px",
                 }}
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleMenu}
-                color="inherit"
+              />
+              <AccessibilityNewRoundedIcon
+                style={{
+                  fontSize: 30,
+                }}
+              />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={open}
+              onClose={handleClose}
+            >
+              <Link
+                to="/login"
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                }}
               >
-                <MenuIcon
-                  style={{
-                    width: "30px",
-                    height: "20px",
-                  }}
-                />
-                <AccessibilityNewRoundedIcon
-                  style={{
-                    fontSize: 30,
-                  }}
-                />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorEl}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={open}
-                onClose={handleClose}
+                <MenuItem onClick={handleClose}>Log In</MenuItem>
+              </Link>
+              <Link
+                to="/signup"
+                style={{ textDecoration: "none", color: "black" }}
               >
-                <Link
-                  to="/login"
-                  style={{
-                    textDecoration: "none",
-                    color: "black",
-                  }}
-                >
-                  {/* <MenuItem onClick={logInOpen}>Log In</MenuItem> */}
-                  <MenuItem>Log In</MenuItem>
-                </Link>
-                <Link
-                  to="/signup"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  {/* <MenuItem onClick={signUpOpen}>Sign Up</MenuItem> */}
-                  <MenuItem>Sign Up</MenuItem>
-                </Link>
-                <hr></hr>
-                <Link
-                  to="/signup"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  {/* <MenuItem onClick={signUpOpen}>Add a Rental</MenuItem> */}
-                  <MenuItem>Add a Rental</MenuItem>
-                </Link>
-              </Menu>
-            </div>
-          )}
+                <MenuItem onClick={handleClose}>Sign Up</MenuItem>
+              </Link>
+              <hr></hr>
+              <Link
+                to="/signup"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <MenuItem onClick={handleClose}>Add a Rental</MenuItem>
+              </Link>
+            </Menu>
+          </div>
+          {/* )} */}
         </Toolbar>
       </AppBar>
     </div>

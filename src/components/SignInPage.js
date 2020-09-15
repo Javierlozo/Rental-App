@@ -128,12 +128,12 @@ export default function SignInPage({ setSignInForm, signInForm, signIn }) {
               ),
             }}
           />
-          <FormControlLabel
+          {/* <FormControlLabel
             control={<Checkbox value="remember" color="secundary" />}
             label="Remember me"
-          />
+          /> */}
           <Button
-            // type="submit"
+            type="submit"
             fullWidth
             variant="contained"
             className={classes.submit}
