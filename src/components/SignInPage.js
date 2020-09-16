@@ -18,7 +18,6 @@ import PoolIcon from "@material-ui/icons/Pool";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import EmailIcon from "@material-ui/icons/Email";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
-import SignUp from "./SignUp";
 
 const useStyles = makeStyles((theme) => ({
   root: {

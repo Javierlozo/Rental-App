@@ -1,13 +1,12 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import img from "../images/Kayak.jpg";
-import SignUp from "../components/SignUp";
+import SignUp from "./SignUp/SignUpTest";
 import SignInPage from "./SignInPage";
 import Cards from "../components/Cards";
 import DashBoard from "../components/DashBoard";
 import PrivateRoutes from "../pages/PrivateRoutes";
 import PublicRoutes from "../pages/PublicRoutes";
-import sample from "../images/Video4.mp4";
 
 const useStyles = makeStyles((theme) => ({
   home: {

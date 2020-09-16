@@ -14,7 +14,7 @@ import FormGroup from "@material-ui/core/FormGroup";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import SignInPage from "./SignInPage";
-import SignUp from "./SignUp";
+import SignUp from "./SignUp/SignUpTest";
 import img from "../images/Logo.png";
 
 const useStyles = makeStyles((theme) => ({
