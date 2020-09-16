@@ -48,12 +48,12 @@ function App() {
         <Router>
           <PublicRoutes path="/" />
           <SignInPage
-            path="login"
+            path="/login"
             signIn={signIn}
             setSignInForm={setSignInForm}
             signInForm={signInForm}
           />
-          <SignUp path="signup" />
+          <SignUp path="/signup" />
         </Router>
       </div>
     );

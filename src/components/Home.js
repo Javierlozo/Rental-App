@@ -7,6 +7,7 @@ import Cards from "../components/Cards";
 import DashBoard from "../components/DashBoard";
 import PrivateRoutes from "../pages/PrivateRoutes";
 import PublicRoutes from "../pages/PublicRoutes";
+import sample from "../images/Video4.mp4";
 
 const useStyles = makeStyles((theme) => ({
   home: {
@@ -22,5 +23,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home() {
   const classes = useStyles();
-  return <div className={classes.home}></div>;
+  return (
+    <div className={classes.home}>
+      {/* <video className="videoTag" autoPlay loop muted>
+        <source src={sample} type="video/mp4" />
+      </video> */}
+    </div>
+  );
 }

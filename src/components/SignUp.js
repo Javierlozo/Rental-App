@@ -69,6 +69,28 @@ export default function SignUp() {
     password: "",
     // confirmationCode: "",
   });
+  console.log(signUpForm);
+
+  const [signUpUser, setSignUpUser] = React.useState(undefined);
+  console.log("signed up user", signUpUser);
+
+  const handleCreateUser = () => {
+    try {
+      async function signUp() {
+        const user = await Auth.signUp({
+          username: signUpForm.username,
+          password: signUpForm.password,
+          attributes: {
+            email: signUpForm.username,
+          },
+        });
+        setSignUpUser(user);
+      }
+      signUp();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -170,6 +192,7 @@ export default function SignUp() {
             fullWidth
             variant="contained"
             className={classes.submit}
+            onClick={handleCreateUser}
           >
             Sign Up
           </Button>
