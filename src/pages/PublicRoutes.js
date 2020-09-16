@@ -2,7 +2,7 @@ import React from "react";
 import { Router } from "@reach/router";
 import SignInPage from "../components/SignInPage";
 import NotFound from "../components/NotFound";
-import SignUp from "../components/SignUp/SignUpTest";
+import SignUp from "../components/SignUp";
 import NavBar from "../components/NavBar";
 import Home from "../components/Home";
 import Cards from "../components/Cards";

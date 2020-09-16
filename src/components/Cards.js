@@ -16,6 +16,9 @@ import Link from "@material-ui/core/Link";
 import imgS from "../images/Surf2.jpg";
 import imgK from "../images/Kayak2.jpg";
 import imgB from "../images/Bike3.jpg";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import InstagramIcon from "@material-ui/icons/Instagram";
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -80,6 +83,10 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: theme.palette.background.paper,
     backgroundColor: "lightgrey",
     padding: theme.spacing(6),
+  },
+  icons: {
+    fontSize: 30,
+    color: "black",
   },
 }));
 
@@ -169,17 +176,31 @@ export default function Cards({ card }) {
 
       {/* Footer */}
       <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
+        <Grid container>
+          <Grid item xs={12} sm={3}>
+            <Link
+              href="https://facebook.com"
+              target="_blank"
+              className={classes.facebook}
+            >
+              <FacebookIcon className={classes.icons} />
+            </Link>
+            <Link
+              href="https://twitter.com"
+              target="_blank"
+              className={classes.twitter}
+            >
+              <TwitterIcon className={classes.icons} />
+            </Link>
+            <Link
+              href="https://instagram.com"
+              target="_blank"
+              className={classes.instagram}
+            >
+              <InstagramIcon className={classes.icons} />
+            </Link>
+          </Grid>
+        </Grid>
       </footer>
       {/* End footer */}
     </React.Fragment>

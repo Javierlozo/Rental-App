@@ -115,6 +115,7 @@ export default function SignUp() {
         elevation={6}
         square
       >
+        {/* Step 1/2 */}
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
             <DirectionsBikeIcon fontSize="medium" />
@@ -181,6 +182,7 @@ export default function SignUp() {
             Send Confirmation Code
           </Button>
         </div>
+        {/* Step 2/2 */}
         <div className={classes.paper}>
           <Typography component="h1" variant="h5">
             <h4>Step 2/2: Enter Confirmation Code</h4>
