@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center",
   },
   paper: {
-    margin: theme.spacing(8, 4),
+    margin: theme.spacing(3, 4),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -81,7 +81,7 @@ export default function SignInPage({ setSignInForm, signInForm, signIn }) {
             <PoolIcon fontSize="medium" />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Log In
+            <h4>Log In</h4>
           </Typography>
           <TextField
             onChange={(e) =>

@@ -20,7 +20,11 @@ import EmailIcon from "@material-ui/icons/Email";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import { Link as RouteLink } from "@reach/router";
 import { Auth } from "aws-amplify";
-import ConfirmationNumberIcon from "@material-ui/icons/ConfirmationNumber";
+import Stepper from "@material-ui/core/Stepper";
+import Step from "@material-ui/core/Step";
+import StepLabel from "@material-ui/core/StepLabel";
+import SetUserName from "./SignUp/SetUserNameOld";
+import ConfirmSignUp from "./SignUp/ConfirmSignUpold";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center",
   },
   paper: {
-    margin: theme.spacing(3, 4),
+    margin: theme.spacing(8, 4),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -60,15 +64,39 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "left",
   },
+  StepperRoot: {
+    width: "100%",
+  },
+  StepperBackButton: {
+    marginRight: theme.spacing(1),
+  },
+  StepperInstructions: {
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1),
+  },
 }));
 
 export default function SignUp() {
   const classes = useStyles();
+  const [activeStep, setActiveStep] = React.useState(0);
+  const steps = getSteps();
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleReset = () => {
+    setActiveStep(0);
+  };
 
   const [signUpForm, setSignUpForm] = React.useState({
     username: "",
     password: "",
-    confirmationCode: "",
+    // confirmationCode: "",
   });
   console.log(signUpForm);
 
@@ -93,14 +121,27 @@ export default function SignUp() {
     }
   };
 
-  const handleConfirmUser = () => {
-    try {
-      Auth.confirmSignUp(signUpForm.username, signUpForm.confirmationCode);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  function getSteps() {
+    return ["Create Username and Password'", "Confirm Sign Up"];
+  }
 
+  function getStepContent(stepIndex, signUpForm, setSignUpForm) {
+    switch (stepIndex) {
+      case 0:
+        return (
+          <SetUserName signUpForm={signUpForm} setSignUpForm={setSignUpForm} />
+        );
+      case 1:
+        return (
+          <ConfirmSignUp
+            signUpForm={signUpForm}
+            setSignUpForm={setSignUpForm}
+          />
+        );
+      default:
+        return "Unknown stepIndex";
+    }
+  }
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
@@ -120,9 +161,34 @@ export default function SignUp() {
             <DirectionsBikeIcon fontSize="medium" />
           </Avatar>
           <Typography component="h1" variant="h5">
-            <h4>Step 1/2: Enter Email Address and Password!</h4>
+            Sign Up
           </Typography>
           <Grid container spacing={3}>
+            <Grid item xs={12} sm={6}>
+              {/* <TextField
+                  autoComplete="fname"
+                  name="firstName"
+                  variant="standard"
+                  required
+                  fullWidth
+                  id="firstName"
+                  label="First Name"
+                  color="secondary"
+                  autoFocus
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  variant="standard"
+                  required
+                  fullWidth
+                  id="lastName"
+                  label="Last Name"
+                  name="lastName"
+                  color="secondary"
+                  autoComplete="lname"
+                /> */}
+            </Grid>
             <Grid item xs={12}>
               <TextField
                 onChange={(e) =>
@@ -178,52 +244,7 @@ export default function SignUp() {
             className={classes.submit}
             onClick={handleCreateUser}
           >
-            Send Confirmation Code
-          </Button>
-        </div>
-        <div className={classes.paper}>
-          <Typography component="h1" variant="h5">
-            <h4>Step 2/2: Enter Confirmation Code</h4>
-            <h6>
-              Enter your confirmation code sent to the email address provided!
-            </h6>
-          </Typography>
-          <Grid container spacing={3}>
-            <Grid item xs={12}>
-              <TextField
-                onChange={(e) =>
-                  setSignUpForm({
-                    ...signUpForm,
-                    confirmationCode: e.target.value,
-                  })
-                }
-                variant="filled"
-                required
-                fullWidth
-                name="confirmation code"
-                label="Confirmation Code"
-                type="password"
-                id="password"
-                color="secondary"
-                autoComplete="current-password"
-                value={signUpForm.confirmationCode}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <ConfirmationNumberIcon />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            </Grid>
-          </Grid>
-          <Button
-            fullWidth
-            variant="contained"
-            className={classes.submit}
-            onClick={handleConfirmUser}
-          >
-            Confirm User
+            Sign Up
           </Button>
           <Grid container>
             <Grid item>

@@ -20,6 +20,11 @@ import EmailIcon from "@material-ui/icons/Email";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import { Link as RouteLink } from "@reach/router";
 import { Auth } from "aws-amplify";
+import Stepper from "@material-ui/core/Stepper";
+import Step from "@material-ui/core/Step";
+import StepLabel from "@material-ui/core/StepLabel";
+import ConfirmSignUp from "./SignUp/ConfirmSignUp";
+import SetUserName from "./SignUp/SetUserName";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
   },
   submit: {
-    margin: theme.spacing(3, 0, 2),
+    margin: theme.spacing(3, 0, 0),
     backgroundColor: "grey",
   },
   back: {
@@ -59,11 +64,41 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: "cover",
     backgroundPosition: "left",
   },
+  stepperRoot: {
+    width: "100%",
+  },
+  stepperBackButton: {
+    marginRight: theme.spacing(1),
+  },
+  stepperInstructions: {
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1),
+  },
 }));
+
+function getSteps() {
+  return ["Create Username and Password'", "Confirm Sign Up"];
+}
+
+function getStepContent(stepIndex, signUpForm, setSignUpForm) {
+  switch (stepIndex) {
+    case 0:
+    // return (
+    //   signUpForm={signUpForm} setSignUpForm={setSignUpForm} />
+    // );
+    case 1:
+      return (
+        <ConfirmSignUp signUpForm={signUpForm} setSignUpForm={setSignUpForm} />
+      );
+    default:
+      return "Unknown stepIndex";
+  }
+}
 
 export default function SignUp() {
   const classes = useStyles();
-
+  const [activeStep, setActiveStep] = React.useState(0);
+  const steps = getSteps();
   const [signUpForm, setSignUpForm] = React.useState({
     username: "",
     password: "",
@@ -73,6 +108,14 @@ export default function SignUp() {
 
   const [signUpUser, setSignUpUser] = React.useState(undefined);
   console.log("signed up user", signUpUser);
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
 
   const handleCreateUser = () => {
     try {
@@ -87,6 +130,7 @@ export default function SignUp() {
         setSignUpUser(user);
       }
       signUp();
+      handleNext();
     } catch (error) {
       console.log(error);
     }
@@ -106,39 +150,56 @@ export default function SignUp() {
         elevation={6}
         square
       >
+        <div className={classes.stepperRoot}>
+          {/* <Stepper activeStep={activeStep} alternativeLabel>
+            {steps.map((label) => (
+              <Step key={label}>
+                <StepLabel>{label}</StepLabel>
+              </Step>
+            ))}
+          </Stepper> */}
+          <div>
+            {activeStep === steps.length ? (
+              <div>
+                <Typography className={classes.stepperInstructions}>
+                  All steps completed
+                </Typography>
+                <Button onClick={handleCreateUser}>Reset</Button>
+              </div>
+            ) : (
+              <div>
+                <Typography className={classes.stepperInstructions}>
+                  {getStepContent(activeStep)}
+                </Typography>
+                <div>
+                  {/* <Button
+                    disabled={activeStep === 0}
+                    onClick={handleBack}
+                    className={classes.backButton}
+                  >
+                    Back
+                  </Button>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleNext}
+                  >
+                    {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                  </Button> */}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
         <div className={classes.paper}>
           <Avatar className={classes.avatar}>
             <DirectionsBikeIcon fontSize="medium" />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign Up
+            Step 1/2: Create Username and Password
           </Typography>
           <Grid container spacing={3}>
-            <Grid item xs={12} sm={6}>
-              {/* <TextField
-                  autoComplete="fname"
-                  name="firstName"
-                  variant="standard"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  color="secondary"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  variant="standard"
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  color="secondary"
-                  autoComplete="lname"
-                /> */}
-            </Grid>
+            <Grid item xs={12} sm={6}></Grid>
             <Grid item xs={12}>
               <TextField
                 onChange={(e) =>
@@ -187,7 +248,7 @@ export default function SignUp() {
               />
             </Grid>
           </Grid>
-          <Button
+          {/* <Button
             type="submit"
             fullWidth
             variant="contained"
@@ -195,7 +256,26 @@ export default function SignUp() {
             onClick={handleCreateUser}
           >
             Sign Up
+          </Button> */}
+          <Button
+            disabled={activeStep === 0}
+            onClick={handleBack}
+            // className={classes.backButton}
+            className={classes.submit}
+            fullWidth
+          >
+            Back
           </Button>
+          <Button
+            className={classes.submit}
+            variant="contained"
+            color="secundary"
+            onClick={handleNext}
+            fullWidth
+          >
+            {activeStep === steps.length - 1 ? "Finish" : "Next"}
+          </Button>
+          <br></br>
           <Grid container>
             <Grid item>
               <Link href="/login" variant="body2">
@@ -204,6 +284,7 @@ export default function SignUp() {
             </Grid>
           </Grid>
         </div>
+        {/* Steper */}
       </Grid>
     </Grid>
   );

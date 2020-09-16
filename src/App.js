@@ -13,6 +13,7 @@ import PrivateRoutes from "./pages/PrivateRoutes";
 import PublicRoutes from "./pages/PublicRoutes";
 import PublicRoutesSecond from "./pages/PublicRoutes";
 import NavBarLogout from "./components/NavBarLogout";
+import ConfirmSignUp from "./components/SignUp/ConfirmSignUp";
 
 function App() {
   const [signedInUser, setSignedInUser] = useState(undefined);
@@ -54,6 +55,7 @@ function App() {
             signInForm={signInForm}
           />
           <SignUp path="/signup" />
+          <ConfirmSignUp path="/confirmsignup" />
         </Router>
       </div>
     );
