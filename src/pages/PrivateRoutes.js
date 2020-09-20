@@ -1,8 +1,6 @@
 import React from "react";
 import { Router } from "@reach/router";
-import Home from "../components/Home";
 import NotFound from "../components/NotFound";
-import NavBar from "../components/NavBar";
 import DashBoard from "../components/DashBoard";
 import NavBarLogout from "../components/NavBarLogout";
 

@@ -3,13 +3,9 @@ import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
-import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import DirectionsBikeIcon from "@material-ui/icons/DirectionsBike";
@@ -18,9 +14,10 @@ import imgb from "../images/SignUp2.jpg";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import EmailIcon from "@material-ui/icons/Email";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
-import { Link as RouteLink } from "@reach/router";
 import { Auth } from "aws-amplify";
 import ConfirmationNumberIcon from "@material-ui/icons/ConfirmationNumber";
+import { navigate } from "@reach/router";
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp() {
+export default function SignUpOnePage() {
   const classes = useStyles();
 
   const [signUpForm, setSignUpForm] = React.useState({
@@ -93,13 +90,32 @@ export default function SignUp() {
     }
   };
 
-  const handleConfirmUser = () => {
+  async function handleConfirmUser() {
+    async function uploadToSql() {
+      console.log("upload to mysql");
+      return await axios({
+        method: "post",
+        url: "https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/user",
+        data: {
+          username: signUpForm.username,
+          firstName: signUpForm.firstName,
+          lastName: signUpForm.LastName,
+        },
+      });
+    }
     try {
-      Auth.confirmSignUp(signUpForm.username, signUpForm.confirmationCode);
+      const response = await Auth.confirmSignUp(
+        signUpForm.username,
+        signUpForm.confirmationCode
+      );
+      if (response === "SUCCESS") {
+        uploadToSql();
+        navigate("/");
+      }
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
   return (
     <Grid container component="main" className={classes.root}>

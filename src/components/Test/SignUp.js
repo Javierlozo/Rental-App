@@ -20,6 +20,7 @@
 // import VpnKeyIcon from "@material-ui/icons/VpnKey";
 // import { Link as RouteLink } from "@reach/router";
 // import { Auth } from "aws-amplify";
+// import { navigate } from "@reach/router";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -67,7 +68,6 @@
 //   const [signUpForm, setSignUpForm] = React.useState({
 //     username: "",
 //     password: "",
-//     // confirmationCode: "",
 //   });
 //   console.log(signUpForm);
 
@@ -85,6 +85,7 @@
 //           },
 //         });
 //         setSignUpUser(user);
+//         navigate("/confirmsignup");
 //       }
 //       signUp();
 //     } catch (error) {
@@ -115,29 +116,29 @@
 //           </Typography>
 //           <Grid container spacing={3}>
 //             <Grid item xs={12} sm={6}>
-//               {/* <TextField
-//                   autoComplete="fname"
-//                   name="firstName"
-//                   variant="standard"
-//                   required
-//                   fullWidth
-//                   id="firstName"
-//                   label="First Name"
-//                   color="secondary"
-//                   autoFocus
-//                 />
-//               </Grid>
-//               <Grid item xs={12} sm={6}>
-//                 <TextField
-//                   variant="standard"
-//                   required
-//                   fullWidth
-//                   id="lastName"
-//                   label="Last Name"
-//                   name="lastName"
-//                   color="secondary"
-//                   autoComplete="lname"
-//                 /> */}
+//               <TextField
+//                 autoComplete="fname"
+//                 name="firstName"
+//                 variant="standard"
+//                 required
+//                 fullWidth
+//                 id="firstName"
+//                 label="First Name"
+//                 color="secondary"
+//                 autoFocus
+//               />
+//             </Grid>
+//             <Grid item xs={12} sm={6}>
+//               <TextField
+//                 variant="standard"
+//                 required
+//                 fullWidth
+//                 id="lastName"
+//                 label="Last Name"
+//                 name="lastName"
+//                 color="secondary"
+//                 autoComplete="lname"
+//               />
 //             </Grid>
 //             <Grid item xs={12}>
 //               <TextField

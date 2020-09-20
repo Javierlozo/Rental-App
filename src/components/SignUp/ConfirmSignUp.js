@@ -20,6 +20,7 @@
 // import ConfirmationNumberIcon from "@material-ui/icons/ConfirmationNumber";
 // import { Link as RouteLink } from "@reach/router";
 // import { Auth } from "aws-amplify";
+// import { navigate } from "@reach/router";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -71,7 +72,8 @@
 
 //   const handleConfirmUser = () => {
 //     try {
-//       Auth.confirmSignUp(signUpForm.username, signUpForm.confirmationCode);
+//       Auth.confirmSignUp(signUpForm.confirmationCode);
+//       navigate("/login");
 //     } catch (error) {
 //       console.log(error);
 //     }
@@ -138,7 +140,7 @@
 //             className={classes.submit}
 //             onClick={handleConfirmUser}
 //           >
-//             Sign Up
+//             Confirm User
 //           </Button>
 //           <Grid container>
 //             <Grid item>

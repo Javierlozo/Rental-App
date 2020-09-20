@@ -6,15 +6,9 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import AccountCircleRoundedIcon from "@material-ui/icons/AccountCircleRounded";
 import AccessibilityNewRoundedIcon from "@material-ui/icons/AccessibilityNewRounded";
-import Switch from "@material-ui/core/Switch";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormGroup from "@material-ui/core/FormGroup";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import SignInPage from "./SignInPage";
-import SignUp from "./SignUp";
 import img from "../images/Logo.png";
 
 const useStyles = makeStyles((theme) => ({

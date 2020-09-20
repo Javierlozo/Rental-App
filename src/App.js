@@ -1,19 +1,12 @@
 // import { withAuthenticator } from "@aws-amplify/ui-react";
 import React, { useEffect, useState } from "react";
 import { Auth } from "aws-amplify";
-import { Router, Link } from "@reach/router";
+import { Router } from "@reach/router";
 import "./App.css";
-import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import SignUp from "./components/SignUp";
+import SignUpOnePage from "./components/SignUpOnePage";
 import SignInPage from "./components/SignInPage";
-import Cards from "./components/Cards";
-import DashBoard from "./components/DashBoard";
 import PrivateRoutes from "./pages/PrivateRoutes";
 import PublicRoutes from "./pages/PublicRoutes";
-import PublicRoutesSecond from "./pages/PublicRoutes";
-import NavBarLogout from "./components/NavBarLogout";
-import ConfirmSignUp from "./components/SignUp/ConfirmSignUp";
 
 function App() {
   const [signedInUser, setSignedInUser] = useState(undefined);
@@ -54,8 +47,7 @@ function App() {
             setSignInForm={setSignInForm}
             signInForm={signInForm}
           />
-          <SignUp path="/signup" />
-          <ConfirmSignUp path="/confirmsignup" />
+          <SignUpOnePage path="/signup" />
         </Router>
       </div>
     );
