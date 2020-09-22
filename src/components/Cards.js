@@ -126,7 +126,7 @@ export default function Cards({ card }) {
               color="textPrimary"
               gutterBottom
             >
-              Rentals In
+              Rentals
             </Typography>
             <Typography
               variant="h5"
@@ -204,8 +204,8 @@ export default function Cards({ card }) {
               flexDirection: "column",
             }}
           >
-            Copyright ® 2020 RentMeSports, LLC. All rights reserved. Site
-            developed by Luis Lozoya
+            <div>Copyright ® 2020 RentMeSports, LLC. All rights reserved.</div>
+            <div>Site developed by Luis Lozoya</div>
           </h4>
         </div>
         {/* <Grid container>

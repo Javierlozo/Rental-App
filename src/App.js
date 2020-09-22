@@ -15,6 +15,7 @@ function App() {
   function signOut() {
     try {
       Auth.signOut({ global: true }).then(() => setSignedInUser(undefined));
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
