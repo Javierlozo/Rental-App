@@ -1,7 +1,7 @@
 // import { withAuthenticator } from "@aws-amplify/ui-react";
 import React, { useEffect, useState } from "react";
 import { Auth } from "aws-amplify";
-import { Router } from "@reach/router";
+import { navigate, Router } from "@reach/router";
 import "./App.css";
 import SignUpOnePage from "./components/SignUpOnePage";
 import SignInPage from "./components/SignInPage";
@@ -24,6 +24,7 @@ function App() {
     try {
       const user = await Auth.signIn(signInForm.username, signInForm.password);
       setSignedInUser(user);
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -39,16 +40,11 @@ function App() {
   if (!signedInUser) {
     return (
       <div className="App">
-        <Router>
-          <PublicRoutes path="/" />
-          <SignInPage
-            path="/login"
-            signIn={signIn}
-            setSignInForm={setSignInForm}
-            signInForm={signInForm}
-          />
-          <SignUpOnePage path="/signup" />
-        </Router>
+        <PublicRoutes
+          signIn={signIn}
+          setSignInForm={setSignInForm}
+          signInForm={signInForm}
+        />
       </div>
     );
   }

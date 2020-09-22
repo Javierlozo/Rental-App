@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import img from "../images/Kayak.jpg";
+import Cards from "../components/Cards";
 
 const useStyles = makeStyles((theme) => ({
   home: {
@@ -17,10 +18,13 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
   const classes = useStyles();
   return (
-    <div className={classes.home}>
-      {/* <video className="videoTag" autoPlay loop muted>
+    <>
+      <div className={classes.home}>
+        {/* <video className="videoTag" autoPlay loop muted>
         <source src={sample} type="video/mp4" />
       </video> */}
-    </div>
+      </div>
+      <Cards />
+    </>
   );
 }

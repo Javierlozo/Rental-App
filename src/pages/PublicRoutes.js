@@ -4,6 +4,8 @@ import NotFound from "../components/NotFound";
 import NavBar from "../components/NavBar";
 import Home from "../components/Home";
 import Cards from "../components/Cards";
+import SignUpOnePage from "../components/SignUpOnePage";
+import SignInPage from "../components/SignInPage";
 
 const PublicRoutes = ({ signIn, setSignInForm, signInForm }) => {
   return (
@@ -12,9 +14,16 @@ const PublicRoutes = ({ signIn, setSignInForm, signInForm }) => {
         <NavBar />
         <Router>
           <Home path="/" />
-          <NotFound default />
+          <SignInPage
+            path="/login"
+            signIn={signIn}
+            setSignInForm={setSignInForm}
+            signInForm={signInForm}
+          />
+          <SignUpOnePage path="/signup" />
+          {/* <NotFound default /> */}
         </Router>
-        <Cards />
+        {/* <Cards /> */}
       </div>
     </div>
   );

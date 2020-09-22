@@ -27,12 +27,12 @@ export default function NavBar() {
   const classes = useStyles();
   // const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
-  // const [signup, setSignUpOpen] = React.useState(false);
+  // const [signedInUser, setSignedInUser] = React.useState(false);
   // const [login, setLogInOpen] = React.useState(false);
   const open = Boolean(anchorEl);
 
-  // const signUpOpen = () => {
-  //   setSignUpOpen(true);
+  // const signInOpen = () => {
+  //   setSignedInUser(true);
   // };
 
   // const logInOpen = () => {
@@ -51,10 +51,11 @@ export default function NavBar() {
     setAnchorEl(null);
   };
 
+  // if (!signedInUser) {
   return (
     <div className={classes.root}>
       <AppBar
-        position="static"
+        position="fixed"
         style={{
           backgroundColor: "white",
           color: "Wheat",
@@ -65,12 +66,16 @@ export default function NavBar() {
             variant="h4"
             className={classes.title}
             style={{
-              display: "center",
+              display: "flex",
+              alignItems: "center",
+              alignContent: "center",
+              flexDirection: "column",
+              paddingLeft: "120px",
             }}
           >
             <div>
               <Link to="/">
-                <img src={img} height="120px"></img>
+                <img src={img} alt="Kayak" height="150px"></img>
               </Link>
             </div>
           </Typography>
@@ -133,13 +138,13 @@ export default function NavBar() {
               >
                 <MenuItem onClick={handleClose}>Sign Up</MenuItem>
               </Link>
-              <hr></hr>
+              {/* <hr></hr>
               <Link
                 to="/signup"
                 style={{ textDecoration: "none", color: "black" }}
               >
                 <MenuItem onClick={handleClose}>Add a Rental</MenuItem>
-              </Link>
+              </Link> */}
             </Menu>
           </div>
           {/* )} */}
@@ -148,3 +153,100 @@ export default function NavBar() {
     </div>
   );
 }
+// return (
+//   <div className={classes.root}>
+//     <AppBar
+//       position="static"
+//       style={{
+//         backgroundColor: "white",
+//         color: "Wheat",
+//       }}
+//     >
+//       <Toolbar>
+//         <Typography
+//           variant="h4"
+//           className={classes.title}
+//           style={{
+//             display: "center",
+//           }}
+//         >
+//           <div>
+//             <Link to="/">
+//               <img src={img} alt="Kayak" height="120px"></img>
+//             </Link>
+//           </div>
+//         </Typography>
+//         {/* {auth && ( */}
+//         <div>
+//           <IconButton
+//             style={{
+//               marginRight: "20px",
+//               paddingLeft: "20px",
+//               backgroundColor: "grey",
+//               borderRadius: "30px",
+//               width: "90px",
+//               height: "50px",
+//             }}
+//             aria-label="account of current user"
+//             aria-controls="menu-appbar"
+//             aria-haspopup="true"
+//             onClick={handleMenu}
+//             color="inherit"
+//           >
+//             <MenuIcon
+//               style={{
+//                 width: "30px",
+//                 height: "20px",
+//               }}
+//             />
+//             <AccessibilityNewRoundedIcon
+//               style={{
+//                 fontSize: 30,
+//               }}
+//             />
+//           </IconButton>
+//           <Menu
+//             id="menu-appbar"
+//             anchorEl={anchorEl}
+//             anchorOrigin={{
+//               vertical: "bottom",
+//               horizontal: "left",
+//             }}
+//             keepMounted
+//             transformOrigin={{
+//               vertical: "top",
+//               horizontal: "right",
+//             }}
+//             open={open}
+//             onClose={handleClose}
+//           >
+//             <Link
+//               to="/login"
+//               style={{
+//                 textDecoration: "none",
+//                 color: "black",
+//               }}
+//             >
+//               <MenuItem onClick={signInOpen}>Profile</MenuItem>
+//             </Link>
+//             <Link
+//               to="/signup"
+//               style={{ textDecoration: "none", color: "black" }}
+//             >
+//               <MenuItem onClick={handleClose}>Messages</MenuItem>
+//             </Link>
+//             <hr></hr>
+//             <Link
+//               to="/signup"
+//               style={{ textDecoration: "none", color: "black" }}
+//             >
+//               <MenuItem onClick={handleClose}>Log Out</MenuItem>
+//             </Link>
+//           </Menu>
+//         </div>
+//         {/* )} */}
+//       </Toolbar>
+//     </AppBar>
+//   </div>
+// );
+// }

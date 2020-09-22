@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import CameraIcon from "@material-ui/icons/PhotoCamera";
@@ -19,6 +19,9 @@ import imgB from "../images/Bike3.jpg";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
+import { navigate } from "@reach/router";
+import Axios from "axios";
+import DashBoard from "./DashBoard";
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -78,7 +81,6 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     color: "white",
   },
-
   footer: {
     // backgroundColor: theme.palette.background.paper,
     backgroundColor: "lightgrey",
@@ -92,6 +94,23 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Cards({ card }) {
   const classes = useStyles();
+
+  const [surfboardCards, setSurfboardCards] = useState([]);
+
+  function surfboards() {
+    navigate("./dashboard");
+  }
+
+  useEffect(() => {
+    async function getData() {
+      const response = await Axios.get(
+        `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcards`
+      );
+      console.log(response);
+      setSurfboardCards();
+    }
+    getData();
+  }, []);
 
   return (
     <React.Fragment>
@@ -123,8 +142,8 @@ export default function Cards({ card }) {
           {/* End hero unit */}
           <Grid container spacing={5}>
             {/* SurfBoard Card */}
-            <Grid item key={card} xs={4}>
-              <Card className={classes.card}>
+            <Grid item xs={4}>
+              <Card className={classes.card} onClick={surfboards}>
                 <CardMedia className={classes.cardMedia} title="Surfboard" />
                 <CardContent className={classes.cardContentS}>
                   <Typography

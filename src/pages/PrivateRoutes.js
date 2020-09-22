@@ -3,6 +3,9 @@ import { Router } from "@reach/router";
 import NotFound from "../components/NotFound";
 import DashBoard from "../components/DashBoard";
 import NavBarLogout from "../components/NavBarLogout";
+import PublicRoutes from "../pages/PublicRoutes";
+import Home from "../components/Home";
+import Cards from "../components/Cards";
 
 const PrivateRoutes = ({ signOut }) => {
   return (
@@ -10,8 +13,8 @@ const PrivateRoutes = ({ signOut }) => {
       <div>
         <NavBarLogout signOut={signOut} />
         <Router>
+          <Home path="/" />
           <DashBoard path="/dashboard" />
-          <NotFound default />
         </Router>
       </div>
     </div>
