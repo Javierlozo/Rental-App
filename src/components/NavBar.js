@@ -10,6 +10,10 @@ import AccessibilityNewRoundedIcon from "@material-ui/icons/AccessibilityNewRoun
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import img from "../images/Logo.png";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+  },
+  icons: {
+    fontSize: 35,
+    color: "grey",
   },
 }));
 
@@ -62,6 +70,20 @@ export default function NavBar() {
         }}
       >
         <Toolbar>
+          <div
+            style={{
+              alignItems: "right",
+              display: "flex",
+              flexDirection: "row",
+              paddingLeft: "15px",
+            }}
+          >
+            <FacebookIcon className={classes.icons} />
+            <hr></hr>
+            <TwitterIcon className={classes.icons} />
+            <hr></hr>
+            <InstagramIcon className={classes.icons} />
+          </div>
           <Typography
             variant="h4"
             className={classes.title}
@@ -70,7 +92,6 @@ export default function NavBar() {
               alignItems: "center",
               alignContent: "center",
               flexDirection: "column",
-              paddingLeft: "120px",
             }}
           >
             <div>

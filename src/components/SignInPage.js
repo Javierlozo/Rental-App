@@ -17,6 +17,7 @@ import VpnKeyIcon from "@material-ui/icons/VpnKey";
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    marginTop: "160px",
     height: "100vh",
   },
   image: {
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: "center",
   },
   paper: {
-    margin: theme.spacing(3, 4),
+    margin: theme.spacing(4, 4),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",

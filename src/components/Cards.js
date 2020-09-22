@@ -16,18 +16,18 @@ import Link from "@material-ui/core/Link";
 import imgS from "../images/Surf2.jpg";
 import imgK from "../images/Kayak2.jpg";
 import imgB from "../images/Bike3.jpg";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import TwitterIcon from "@material-ui/icons/Twitter";
-import InstagramIcon from "@material-ui/icons/Instagram";
 import { navigate } from "@reach/router";
 import Axios from "axios";
 import DashBoard from "./DashBoard";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import TwitterIcon from "@material-ui/icons/Twitter";
+import InstagramIcon from "@material-ui/icons/Instagram";
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
     // backgroundColor: theme.palette.background.paper,
     backgroundColor: "lightgrey",
-    padding: theme.spacing(6, 0, 6),
+    padding: theme.spacing(2, 0, 2),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -195,7 +195,20 @@ export default function Cards({ card }) {
 
       {/* Footer */}
       <footer className={classes.footer}>
-        <Grid container>
+        <div>
+          <h4
+            style={{
+              alignItems: "center",
+              display: "flex",
+              alignContent: "center",
+              flexDirection: "column",
+            }}
+          >
+            Copyright ® 2020 RentMeSports, LLC. All rights reserved. Site
+            developed by Luis Lozoya
+          </h4>
+        </div>
+        {/* <Grid container>
           <Grid item xs={12} sm={3}>
             <Link
               href="https://facebook.com"
@@ -219,7 +232,7 @@ export default function Cards({ card }) {
               <InstagramIcon className={classes.icons} />
             </Link>
           </Grid>
-        </Grid>
+        </Grid> */}
       </footer>
       {/* End footer */}
     </React.Fragment>
