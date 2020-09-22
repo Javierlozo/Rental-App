@@ -100,7 +100,7 @@ export default function SignUpOnePage() {
         data: {
           username: signUpForm.username,
           firstName: signUpForm.firstName,
-          lastName: signUpForm.LastName,
+          lastName: signUpForm.lastName,
         },
       });
     }
@@ -143,6 +143,9 @@ export default function SignUpOnePage() {
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={(e) =>
+                  setSignUpForm({ ...signUpForm, firstName: e.target.value })
+                }
                 autoComplete="fname"
                 name="firstName"
                 variant="standard"
@@ -156,6 +159,9 @@ export default function SignUpOnePage() {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={(e) =>
+                  setSignUpForm({ ...signUpForm, lastName: e.target.value })
+                }
                 variant="standard"
                 required
                 fullWidth

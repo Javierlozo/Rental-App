@@ -95,22 +95,22 @@ const useStyles = makeStyles((theme) => ({
 export default function Cards({ card }) {
   const classes = useStyles();
 
-  const [surfboardCards, setSurfboardCards] = useState([]);
+  // const [surfboardCards, setSurfboardCards] = useState([]);
 
   function surfboards() {
     navigate("./dashboard");
   }
 
-  useEffect(() => {
-    async function getData() {
-      const response = await Axios.get(
-        `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcards`
-      );
-      console.log(response);
-      setSurfboardCards();
-    }
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   async function getData() {
+  //     const response = await Axios.get(
+  //       `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcards`
+  //     );
+  //     console.log(response);
+  //     setSurfboardCards();
+  //   }
+  //   getData();
+  // }, []);
 
   return (
     <React.Fragment>
