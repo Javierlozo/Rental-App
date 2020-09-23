@@ -1,7 +1,7 @@
 import React from "react";
 import { Router } from "@reach/router";
 import NotFound from "../components/NotFound";
-import DashBoard from "../components/DashBoard";
+import SDashBoard from "../components/SDashBoard";
 import NavBarLogout from "../components/NavBarLogout";
 import PublicRoutes from "../pages/PublicRoutes";
 import Home from "../components/Home";
@@ -14,7 +14,7 @@ const PrivateRoutes = ({ signOut }) => {
         <NavBarLogout signOut={signOut} />
         <Router>
           <Home path="/" />
-          <DashBoard path="/dashboard" />
+          <SDashBoard path="/sdashboard" />
         </Router>
       </div>
     </div>

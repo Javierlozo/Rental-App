@@ -18,7 +18,7 @@ import imgK from "../images/Kayak2.jpg";
 import imgB from "../images/Bike3.jpg";
 import { navigate } from "@reach/router";
 import Axios from "axios";
-import DashBoard from "./DashBoard";
+import DashBoard from "./SDashBoard";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -92,25 +92,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Cards({ card }) {
+export default function Cards({ card, signedInUser }) {
   const classes = useStyles();
 
-  // const [surfboardCards, setSurfboardCards] = useState([]);
-
   function surfboards() {
-    navigate("./dashboard");
+    navigate("/sdashboard");
   }
-
-  // useEffect(() => {
-  //   async function getData() {
-  //     const response = await Axios.get(
-  //       `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcards`
-  //     );
-  //     console.log(response);
-  //     setSurfboardCards();
-  //   }
-  //   getData();
-  // }, []);
 
   return (
     <React.Fragment>
