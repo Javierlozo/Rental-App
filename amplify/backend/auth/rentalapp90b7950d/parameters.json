@@ -1,6 +1,6 @@
 {
     "identityPoolName": "rentalapp90b7950d_identitypool_90b7950d",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "rental90b7950d",
     "userPoolName": "rentalapp90b7950d_userpool_90b7950d",
     "autoVerifiedAttributes": [

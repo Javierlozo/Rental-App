@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import CameraIcon from "@material-ui/icons/PhotoCamera";
-import SCard from "./SCard";
+import SurfCard from "./SurfCard";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -11,6 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import axios from "axios";
+import { navigate } from "@reach/router";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function DashBoard({ card }) {
+export default function SurfDashBoard() {
   const classes = useStyles();
 
   const [surfboardCards, setSurfboardCards] = useState([]);
@@ -57,11 +58,15 @@ export default function DashBoard({ card }) {
         `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcards`
       );
       console.log(response);
-      setSurfboardCards(response.data.message[0]);
+      setSurfboardCards(response.data.message);
       console.log(surfboardCards);
     }
     getData();
   }, []);
+
+  function surfboardStepper() {
+    navigate("/surfstepper");
+  }
 
   return (
     <React.Fragment>
@@ -82,7 +87,11 @@ export default function DashBoard({ card }) {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                  <Button variant="contained" color="primary">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={surfboardStepper}
+                  >
                     Add a rental
                   </Button>
                 </Grid>
@@ -97,10 +106,10 @@ export default function DashBoard({ card }) {
               <div>
                 {surfboardCards.map((surfboardCards) => {
                   return (
-                    <SCard
+                    <SurfCard
                       key={surfboardCards.id}
                       surfboardCards={surfboardCards}
-                    ></SCard>
+                    ></SurfCard>
                   );
                 })}
               </div>

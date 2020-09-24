@@ -18,7 +18,7 @@ import imgK from "../images/Kayak2.jpg";
 import imgB from "../images/Bike3.jpg";
 import { navigate } from "@reach/router";
 import Axios from "axios";
-import DashBoard from "./SDashBoard";
+import SurfDashBoard from "./SurfDashBoard";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
@@ -96,7 +96,7 @@ export default function Cards({ card, signedInUser }) {
   const classes = useStyles();
 
   function surfboards() {
-    navigate("/sdashboard");
+    navigate("/surfdashboard");
   }
 
   return (

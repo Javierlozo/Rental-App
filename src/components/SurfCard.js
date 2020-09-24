@@ -40,8 +40,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SCard({ surfboardCards }) {
+export default function SurfCard({ surfboardCards }) {
   const classes = useStyles();
+  console.log(surfboardCards);
   // // const [expanded, setExpanded] = React.useState(false);
 
   // const [surfboardCards, setSurfboardCards] = useState([]);
@@ -74,13 +75,12 @@ export default function SCard({ surfboardCards }) {
         //   </IconButton>
         // }
         title={surfboardCards.title}
-        cost={surfboardCards.rentcost}
-        subheader={surfboardCards.date}
+        subheader={surfboardCards.rentcost}
       />
       <CardMedia
         className={classes.media}
         image="/static/images/cards/paella.jpg"
-        title="Paella dish"
+        title={surfboardCards.title}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
