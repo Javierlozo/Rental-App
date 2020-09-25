@@ -88,6 +88,7 @@ export default function SurfDashBoard() {
               <Grid container spacing={2} justify="center">
                 <Grid item>
                   <Button
+                    style={{ backgroundColor: "grey" }}
                     variant="contained"
                     color="primary"
                     onClick={surfboardStepper}
@@ -101,19 +102,17 @@ export default function SurfDashBoard() {
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
-          <Grid container spacing={4}>
-            <Grid item xs={12} sm={6} md={4}>
-              <div>
-                {surfboardCards.map((surfboardCards) => {
-                  return (
-                    <SurfCard
-                      key={surfboardCards.id}
-                      surfboardCards={surfboardCards}
-                    ></SurfCard>
-                  );
-                })}
-              </div>
-            </Grid>
+          <Grid container spacing={3}>
+            {surfboardCards.map((surfboardCards) => {
+              return (
+                <Grid item xs={6}>
+                  <SurfCard
+                    key={surfboardCards.id}
+                    surfboardCards={surfboardCards}
+                  ></SurfCard>
+                </Grid>
+              );
+            })}
           </Grid>
         </Container>
       </main>

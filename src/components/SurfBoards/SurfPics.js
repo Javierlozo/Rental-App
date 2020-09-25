@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { Link as RouteLink } from "@reach/router";
+import { Storage } from "aws-amplify";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -35,7 +36,6 @@ export default function SurfPic({ addForm, setAddForm }) {
   const classes = useStyles();
 
   function onChange(e) {
-    // const file = e.target.files[0];
     setAddForm({ ...addForm, s3uuid: e.target.files[0] });
   }
 
@@ -43,11 +43,11 @@ export default function SurfPic({ addForm, setAddForm }) {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+        {/* <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
-        </Avatar>
+        </Avatar> */}
         <Typography component="h1" variant="h5">
-          Upload Pictures!
+          Upload Some Pictures!
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -61,17 +61,10 @@ export default function SurfPic({ addForm, setAddForm }) {
             <Grid item xs={12}></Grid>
           </Grid>
           <Grid container justify="flex-end">
-            <Grid item>
-              <Link href="#" variant="body2">
-                <RouteLink to="/"> Already have an account? Sign in</RouteLink>
-              </Link>
-            </Grid>
+            <Grid item></Grid>
           </Grid>
         </form>
       </div>
-      <Box mt={5}>
-        <Copyright />
-      </Box>
     </Container>
   );
 }

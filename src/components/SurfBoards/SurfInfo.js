@@ -37,8 +37,7 @@ export default function SurfInfo({ addForm, setAddForm }) {
         </Typography>
         <TextField
           onChange={(e) => setAddForm({ ...addForm, title: e.target.value })}
-          variant="filled"
-          id="outlined-full-width"
+          id="title"
           label="Title"
           style={{ margin: 8 }}
           placeholder="8' SurfBoard"
@@ -55,8 +54,7 @@ export default function SurfInfo({ addForm, setAddForm }) {
           onChange={(e) =>
             setAddForm({ ...addForm, description: e.target.value })
           }
-          variant="filled"
-          id="outlined-full-width"
+          id="description"
           label="Description"
           style={{ margin: 8 }}
           placeholder="Big surfboard for beginners"
@@ -71,11 +69,10 @@ export default function SurfInfo({ addForm, setAddForm }) {
         />
         <TextField
           onChange={(e) => setAddForm({ ...addForm, rentcost: e.target.value })}
-          variant="filled"
-          id="outlined-full-width"
+          id="cost"
           label="Cost"
           style={{ margin: 8 }}
-          placeholder="Placeholder"
+          placeholder="$40/day"
           fullWidth
           color="secondary"
           margin="normal"
