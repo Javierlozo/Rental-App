@@ -23,25 +23,6 @@ const useStyles = makeStyles(() => ({
 export default function ProfileDashBoard({ className, ...rest }) {
   const classes = useStyles();
 
-  async function handleGetUser({ user }) {
-    async function getCard() {
-      return await axios({
-        method: "get",
-        url: "https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/user",
-        data: {
-          username: user.username,
-        },
-      });
-    }
-    try {
-      getCard();
-      window.location.reload();
-      console.log("get card");
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
   return (
     <>
       <ProfilePic />
@@ -87,7 +68,7 @@ export default function ProfileDashBoard({ className, ...rest }) {
         </CardContent>
         <Divider />
         <Box display="flex" justifyContent="flex-end" p={2}>
-          <Button color="primary" variant="contained">
+          <Button color="grey" variant="contained">
             Save details
           </Button>
         </Box>

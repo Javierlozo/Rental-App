@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
+import axios from "axios";
 // import moment from "moment";
 import ProfileInfo from "./ProfileDashboard";
 import {
@@ -14,26 +15,31 @@ import {
   Typography,
   makeStyles,
 } from "@material-ui/core";
-
-const user = {
-  avatar: "/static/images/avatars/avatar_6.png",
-  city: "Los Angeles",
-  country: "USA",
-  jobTitle: "Senior Developer",
-  name: "Katarina Smith",
-  timezone: "GTM-7",
-};
+import { useState } from "react";
 
 const useStyles = makeStyles(() => ({
   root: { marginTop: "160px" },
   avatar: {
-    height: 100,
-    width: 100,
+    height: 80,
+    width: 80,
   },
 }));
 
 const ProfilePic = ({ className, ...rest }) => {
   const classes = useStyles();
+
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      const response = await axios.get(
+        `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/user`
+      );
+      console.log(response);
+      setUser(response);
+    }
+    getData();
+  }, []);
 
   return (
     <>
