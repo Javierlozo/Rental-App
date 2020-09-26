@@ -34,18 +34,12 @@ function getSteps() {
   return ["Add More Information", "Upload an Image"];
 }
 
-function getStepContent(stepIndex, addForm, setAddForm, signUpForm) {
+function getStepContent(stepIndex, addForm, setAddForm) {
   switch (stepIndex) {
     case 0:
       return <SurfInfo addForm={addForm} setAddForm={setAddForm} />;
     case 1:
-      return (
-        <SurfPics
-          addForm={addForm}
-          setAddForm={setAddForm}
-          signUpForm={signUpForm}
-        />
-      );
+      return <SurfPics addForm={addForm} setAddForm={setAddForm} />;
     default:
       return "Unknown stepIndex";
   }
@@ -62,7 +56,6 @@ export default function SurfStepper() {
     description: "",
     rentcost: "",
     s3uuid: undefined,
-    date: "",
   });
   console.log(addForm);
 
@@ -116,7 +109,7 @@ export default function SurfStepper() {
     setActiveStep(0);
   };
 
-  async function handleUploadCard({ signUpForm }) {
+  async function handleUploadCard({ signInForm }) {
     async function uploadToSql(uuid) {
       console.log("upload to mysql");
       return await axios({
@@ -124,7 +117,7 @@ export default function SurfStepper() {
         url:
           "https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcard",
         data: {
-          username: signUpForm.username,
+          username: addForm.username,
           title: addForm.title,
           description: addForm.description,
           rentcost: addForm.rentcost,
@@ -135,7 +128,7 @@ export default function SurfStepper() {
     try {
       const myUuid = uuid();
       Storage.put(
-        `${signUpForm.username}/profilepics/${myUuid}.png`,
+        `${addForm.username}/profilepics/${myUuid}.png`,
         // `profilepics/${myUuid}.png`,
         addForm.s3uuid,
         {

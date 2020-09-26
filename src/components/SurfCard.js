@@ -17,6 +17,8 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import axios from "axios";
 import img from "../images/Surf1.jpg";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import InputAdornment from "@material-ui/core/InputAdornment";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,6 +47,17 @@ export default function SurfCard({ surfboardCards }) {
   const classes = useStyles();
   console.log(surfboardCards);
 
+  async function deleteCard() {
+    return await axios({
+      method: "delete",
+      url:
+        "https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcard?id=1",
+      data: {
+        cardid: "",
+      },
+    });
+  }
+
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -60,6 +73,9 @@ export default function SurfCard({ surfboardCards }) {
         <Typography variant="body2" color="textSecondary" component="p">
           {surfboardCards.description}
         </Typography>
+        <InputAdornment position="end" fontSize="large">
+          <DeleteForeverIcon onclick={deleteCard} />
+        </InputAdornment>
       </CardContent>
     </Card>
   );

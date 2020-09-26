@@ -27,6 +27,7 @@ function App() {
       const user = await Auth.signIn(signInForm.username, signInForm.password);
       setSignedInUser(user);
       navigate("/");
+      console.log(signInForm.username);
     } catch (error) {
       console.log(error);
     }

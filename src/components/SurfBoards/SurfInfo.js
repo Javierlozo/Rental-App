@@ -36,6 +36,21 @@ export default function SurfInfo({ addForm, setAddForm }) {
           Tell us about your rental!
         </Typography>
         <TextField
+          onChange={(e) => setAddForm({ ...addForm, username: e.target.value })}
+          id="username"
+          label="Confirm Username"
+          style={{ margin: 8 }}
+          // placeholder=""
+          fullWidth
+          color="secondary"
+          margin="normal"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant="outlined"
+          value={addForm.username}
+        />
+        <TextField
           onChange={(e) => setAddForm({ ...addForm, title: e.target.value })}
           id="title"
           label="Title"
