@@ -19,6 +19,8 @@ import axios from "axios";
 import img from "../images/Surf1.jpg";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 import InputAdornment from "@material-ui/core/InputAdornment";
+import { navigate } from "@reach/router";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,15 +49,24 @@ export default function SurfCard({ surfboardCards }) {
   const classes = useStyles();
   console.log(surfboardCards);
 
-  async function deleteCard() {
-    return await axios({
-      method: "delete",
-      url:
-        "https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcard?id=1",
-      data: {
-        cardid: "",
-      },
-    });
+  async function handleDeleteCard() {
+    async function deleteCard() {
+      return await axios({
+        method: "delete",
+        url:
+          "https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcard",
+        data: {
+          cardid: surfboardCards.id,
+        },
+      });
+    }
+    try {
+      deleteCard();
+      window.location.reload();
+      console.log("deleted");
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -66,15 +77,19 @@ export default function SurfCard({ surfboardCards }) {
       />
       <CardMedia
         className={classes.media}
-        image="https://source.unsplash.com/random"
+        // image="https://source.unsplash.com/random"
         title={surfboardCards.title}
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           {surfboardCards.description}
         </Typography>
-        <InputAdornment position="end" fontSize="large">
-          <DeleteForeverIcon onclick={deleteCard} />
+        <InputAdornment
+          position="end"
+          fontSize="large"
+          onClick={handleDeleteCard}
+        >
+          <DeleteForeverIcon />
         </InputAdornment>
       </CardContent>
     </Card>
