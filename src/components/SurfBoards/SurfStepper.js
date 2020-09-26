@@ -64,7 +64,7 @@ export default function SurfStepper() {
       return (
         <Button
           variant="contained"
-          color="primary"
+          color="grey"
           onClick={handleUploadCard}
           style={{
             display: "flex",
@@ -81,7 +81,7 @@ export default function SurfStepper() {
       return (
         <Button
           variant="contained"
-          color="primary"
+          color="grey"
           onClick={handleNext}
           style={{
             display: "flex",
@@ -184,7 +184,7 @@ export default function SurfStepper() {
               {activeStep === steps.length - 1 ? (
                 <Button
                   variant="contained"
-                  color="primary"
+                  color="grey"
                   onClick={handleUploadCard}
                   style={{
                     display: "flex",

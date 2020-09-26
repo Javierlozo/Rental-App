@@ -128,7 +128,7 @@ export default function NavBar({ signOut }) {
               onClose={handleClose}
             >
               <Link
-                to="/login"
+                to="/profiledashboard"
                 style={{
                   textDecoration: "none",
                   color: "black",

@@ -7,6 +7,7 @@ import PublicRoutes from "../pages/PublicRoutes";
 import Home from "../components/Home";
 import Cards from "../components/Cards";
 import SurfStepper from "../components/SurfBoards/SurfStepper";
+import ProfileDashBoard from "../components/ProfileDashboard";
 
 const PrivateRoutes = ({ signOut }) => {
   return (
@@ -17,6 +18,7 @@ const PrivateRoutes = ({ signOut }) => {
           <Home path="/" />
           <SurfDashBoard path="/surfdashboard" />
           <SurfStepper path="/surfstepper" />
+          <ProfileDashBoard path="/profiledashboard" />
         </Router>
       </div>
     </div>

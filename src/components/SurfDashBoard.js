@@ -12,6 +12,8 @@ import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import axios from "axios";
 import { navigate } from "@reach/router";
+import signInForm from "../App";
+import { signedInUser } from "react";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -47,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SurfDashBoard() {
+export default function SurfDashBoard({ setSignedInUser }) {
   const classes = useStyles();
 
   const [surfboardCards, setSurfboardCards] = useState([]);
@@ -60,6 +62,8 @@ export default function SurfDashBoard() {
       console.log(response);
       setSurfboardCards(response.data.message);
       console.log(surfboardCards);
+      console.log(signInForm.username);
+      console.log(signedInUser);
     }
     getData();
   }, []);
@@ -69,53 +73,55 @@ export default function SurfDashBoard() {
   }
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <main>
-        {/* Hero unit */}
-        <div className={classes.heroContent}>
-          <Container maxWidth="sm">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="textPrimary"
-              gutterBottom
-            >
-              Surfboards for rent
-            </Typography>
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-                  <Button
-                    style={{ backgroundColor: "grey" }}
-                    variant="contained"
-                    color="primary"
-                    onClick={surfboardStepper}
-                  >
-                    Add a rental
-                  </Button>
+    <div>
+      <React.Fragment>
+        <CssBaseline />
+        <main>
+          {/* Hero unit */}
+          <div className={classes.heroContent}>
+            <Container maxWidth="sm">
+              <Typography
+                component="h1"
+                variant="h2"
+                align="center"
+                color="textPrimary"
+                gutterBottom
+              >
+                Surfboards for rent
+              </Typography>
+              <div className={classes.heroButtons}>
+                <Grid container spacing={2} justify="center">
+                  <Grid item>
+                    <Button
+                      style={{ backgroundColor: "grey" }}
+                      variant="contained"
+                      color="primary"
+                      onClick={surfboardStepper}
+                    >
+                      Add a rental
+                    </Button>
+                  </Grid>
                 </Grid>
-              </Grid>
-            </div>
+              </div>
+            </Container>
+          </div>
+          <Container className={classes.cardGrid} maxWidth="md">
+            {/* End hero unit */}
+            <Grid container spacing={3}>
+              {surfboardCards.map((surfboardCards) => {
+                return (
+                  <Grid item xs={6}>
+                    <SurfCard
+                      key={surfboardCards.id}
+                      surfboardCards={surfboardCards}
+                    ></SurfCard>
+                  </Grid>
+                );
+              })}
+            </Grid>
           </Container>
-        </div>
-        <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={3}>
-            {surfboardCards.map((surfboardCards) => {
-              return (
-                <Grid item xs={6}>
-                  <SurfCard
-                    key={surfboardCards.id}
-                    surfboardCards={surfboardCards}
-                  ></SurfCard>
-                </Grid>
-              );
-            })}
-          </Grid>
-        </Container>
-      </main>
-    </React.Fragment>
+        </main>
+      </React.Fragment>
+    </div>
   );
 }

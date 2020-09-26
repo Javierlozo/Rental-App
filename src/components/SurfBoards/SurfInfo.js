@@ -2,6 +2,11 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import NativeSelect from "@material-ui/core/NativeSelect";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,10 +20,21 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(1),
     width: "100%",
   },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
 }));
 
 export default function SurfInfo({ addForm, setAddForm }) {
   const classes = useStyles();
+  const [state, setState] = React.useState({
+    cost: "",
+    name: "hai",
+  });
 
   return (
     <div className={classes.root}>
@@ -82,7 +98,7 @@ export default function SurfInfo({ addForm, setAddForm }) {
           variant="outlined"
           value={addForm.description}
         />
-        <TextField
+        {/* <TextField
           onChange={(e) => setAddForm({ ...addForm, rentcost: e.target.value })}
           id="cost"
           label="Cost"
@@ -95,7 +111,28 @@ export default function SurfInfo({ addForm, setAddForm }) {
             shrink: true,
           }}
           variant="outlined"
-        />
+        /> */}
+        <FormControl variant="outlined" className={classes.formControl}>
+          <InputLabel htmlFor="outlined-age-native-simple">Cost</InputLabel>
+          <Select
+            onChange={(e) =>
+              setAddForm({ ...addForm, rentcost: e.target.value })
+            }
+            native
+            value={state.age}
+            label="Cost"
+            inputProps={{
+              name: "Cost",
+              id: "outlined-age-native-simple",
+            }}
+          >
+            <option aria-label="None" value="" />
+            <option value={"$20/day"}>$20/day</option>
+            <option value={"$30/day"}>$30/day</option>
+            <option value={"$40/day"}>$40/day</option>
+            <option value={"$50/day"}>$50/day</option>
+          </Select>
+        </FormControl>
       </div>
     </div>
   );

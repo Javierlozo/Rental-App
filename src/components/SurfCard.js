@@ -69,6 +69,25 @@ export default function SurfCard({ surfboardCards }) {
     }
   }
 
+  async function handleModifyCard() {
+    async function modifyCard() {
+      return await axios({
+        method: "put",
+        url:
+          "https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcard",
+        data: {
+          cardid: surfboardCards.id,
+        },
+      });
+    }
+    try {
+      modifyCard();
+      navigate("/surfstepper");
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -84,13 +103,40 @@ export default function SurfCard({ surfboardCards }) {
         <Typography variant="body2" color="textSecondary" component="p">
           {surfboardCards.description}
         </Typography>
-        <InputAdornment
+        <br></br>
+        {/* <InputAdornment
           position="end"
           fontSize="large"
           onClick={handleDeleteCard}
         >
           <DeleteForeverIcon />
-        </InputAdornment>
+        </InputAdornment> */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            alignContent: "center",
+          }}
+        >
+          <Button
+            style={{ backgroundColor: "green" }}
+            variant="contained"
+            color="primary"
+            onClick={handleModifyCard}
+          >
+            EDIT
+          </Button>
+          <br></br>
+          <Button
+            style={{ backgroundColor: "red" }}
+            variant="contained"
+            color="primary"
+            onClick={handleDeleteCard}
+          >
+            DELETE CARD
+          </Button>
+        </div>
       </CardContent>
     </Card>
   );
