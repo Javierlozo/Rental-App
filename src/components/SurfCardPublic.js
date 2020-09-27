@@ -59,7 +59,7 @@ export default function SurfCardPublic({ surfboardCards }) {
       />
       <CardMedia
         className={classes.media}
-        // image="https://source.unsplash.com/random"
+        image="https://source.unsplash.com/random"
         title={surfboardCards.title}
       />
       <CardContent>

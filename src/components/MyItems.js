@@ -49,23 +49,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SurfDashBoard({ setSignedInUser }) {
+export default function MyItems() {
   const classes = useStyles();
 
   const [surfboardCards, setSurfboardCards] = useState([]);
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
-    async function getData() {
+    async function getCards() {
       const response = await axios.get(
-        `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcards`
+        `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/cardsbyuser?username=luisloart@gmail.com`
       );
-      console.log(response);
       setSurfboardCards(response.data.message);
-      console.log(surfboardCards);
-      console.log(signInForm.username);
-      console.log(signedInUser);
     }
-    getData();
+    getCards();
   }, []);
 
   function surfboardStepper() {
@@ -112,7 +109,7 @@ export default function SurfDashBoard({ setSignedInUser }) {
                 return (
                   <Grid item xs={6}>
                     <SurfCard
-                      key={surfboardCards.id}
+                      key={surfboardCards.username}
                       surfboardCards={surfboardCards}
                     ></SurfCard>
                   </Grid>
