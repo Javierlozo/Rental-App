@@ -1,13 +1,14 @@
 import React from "react";
 import { Router } from "@reach/router";
 import NotFound from "../components/NotFound";
-import SurfDashBoard from "../components/SurfDashBoard";
 import NavBarLogout from "../components/NavBarLogout";
 import PublicRoutes from "../pages/PublicRoutes";
 import Home from "../components/Home";
 import Cards from "../components/Cards";
 import SurfStepper from "../components/SurfBoards/SurfStepper";
 import ProfilePic from "../components/ProfileDashboard";
+import SurfDashBoardPublic from "../components/SurfDashBoardPublic";
+import MyItems from "../components/MyItems";
 
 const PrivateRoutes = ({ signOut }) => {
   return (
@@ -16,7 +17,8 @@ const PrivateRoutes = ({ signOut }) => {
         <NavBarLogout signOut={signOut} />
         <Router>
           <Home path="/" />
-          <SurfDashBoard path="/surfdashboard" />
+          <SurfDashBoardPublic path="/surfdashboardpublic" />
+          <MyItems path="/myitems" />
           <SurfStepper path="/surfstepper" />
           <ProfilePic path="/profiledashboard" />
         </Router>

@@ -137,16 +137,19 @@ export default function NavBar({ signOut }) {
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
               </Link>
               <Link
-                to="/signup"
+                to="/myitems"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <MenuItem onClick={handleClose}>My Items</MenuItem>
+              </Link>
+              <Link
+                to="/messages"
                 style={{ textDecoration: "none", color: "black" }}
               >
                 <MenuItem onClick={handleClose}>Messages</MenuItem>
               </Link>
               <hr></hr>
-              <Link
-                to="/signup"
-                style={{ textDecoration: "none", color: "black" }}
-              >
+              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
                 <MenuItem onClick={signOut}>Sign Out</MenuItem>
               </Link>
             </Menu>

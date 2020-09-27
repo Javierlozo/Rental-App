@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import CameraIcon from "@material-ui/icons/PhotoCamera";
-import SurfCard from "./SurfCard";
+import SurfCardPublic from "./SurfCardPublic";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SurfDashBoard({ setSignedInUser }) {
+export default function SurfDashBoardPublic({ setSignedInUser }) {
   const classes = useStyles();
 
   const [surfboardCards, setSurfboardCards] = useState([]);
@@ -67,10 +67,6 @@ export default function SurfDashBoard({ setSignedInUser }) {
     }
     getData();
   }, []);
-
-  function surfboardStepper() {
-    navigate("/surfstepper");
-  }
 
   return (
     <div>
@@ -90,18 +86,7 @@ export default function SurfDashBoard({ setSignedInUser }) {
                 Surfboards for rent
               </Typography>
               <div className={classes.heroButtons}>
-                <Grid container spacing={2} justify="center">
-                  <Grid item>
-                    <Button
-                      style={{ backgroundColor: "grey" }}
-                      variant="contained"
-                      color="primary"
-                      onClick={surfboardStepper}
-                    >
-                      Add a rental
-                    </Button>
-                  </Grid>
-                </Grid>
+                <Grid container spacing={2} justify="center"></Grid>
               </div>
             </Container>
           </div>
@@ -111,10 +96,10 @@ export default function SurfDashBoard({ setSignedInUser }) {
               {surfboardCards.map((surfboardCards) => {
                 return (
                   <Grid item xs={6}>
-                    <SurfCard
+                    <SurfCardPublic
                       key={surfboardCards.id}
                       surfboardCards={surfboardCards}
-                    ></SurfCard>
+                    ></SurfCardPublic>
                   </Grid>
                 );
               })}

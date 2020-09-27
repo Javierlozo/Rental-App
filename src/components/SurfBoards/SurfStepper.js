@@ -128,7 +128,7 @@ export default function SurfStepper() {
     try {
       const myUuid = uuid();
       Storage.put(
-        `${addForm.username}/profilepics/${myUuid}.png`,
+        `${addForm.username}/surfboardpics/${myUuid}.png`,
         // `profilepics/${myUuid}.png`,
         addForm.s3uuid,
         {
@@ -137,7 +137,7 @@ export default function SurfStepper() {
       )
         .then((result) => console.log(result))
         .then(() => uploadToSql(myUuid))
-        .then(() => navigate("/surfdashboard"))
+        .then(() => navigate("/myitems"))
         .catch((err) => console.log(err));
     } catch (error) {
       console.log(error);

@@ -7,7 +7,6 @@ import SignUpOnePage from "./components/SignUpOnePage";
 import SignInPage from "./components/SignInPage";
 import PrivateRoutes from "./pages/PrivateRoutes";
 import PublicRoutes from "./pages/PublicRoutes";
-import { SurfDashboard } from "./components/SurfDashBoard";
 
 function App() {
   const [signedInUser, setSignedInUser] = useState(undefined);
