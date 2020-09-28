@@ -99,6 +99,10 @@ export default function Cards({ card, signedInUser }) {
     navigate("/surfdashboardpublic");
   }
 
+  function kayaks() {
+    navigate("/kayakdashboardpublic");
+  }
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -145,8 +149,8 @@ export default function Cards({ card, signedInUser }) {
               </Card>
             </Grid>
             {/* Kayak Card */}
-            <Grid item key={card} xs={4}>
-              <Card className={classes.card}>
+            <Grid item xs={4}>
+              <Card className={classes.card} onClick={kayaks}>
                 <CardMedia className={classes.cardMedia} title="Kayaks" />
                 <CardContent className={classes.cardContentK}>
                   <Typography

@@ -7,6 +7,7 @@ import Cards from "../components/Cards";
 import SignUpOnePage from "../components/SignUpOnePage";
 import SignInPage from "../components/SignInPage";
 import SurfDashBoardPublic from "../components/SurfDashBoardPublic";
+import KayakDashBoardPublic from "../components/KayakDashBoardPublic";
 
 const PublicRoutes = ({ signIn, setSignInForm, signInForm }) => {
   return (
@@ -23,6 +24,7 @@ const PublicRoutes = ({ signIn, setSignInForm, signInForm }) => {
           />
           <SignUpOnePage path="/signup" />
           <SurfDashBoardPublic path="/surfdashboardpublic" />
+          <KayakDashBoardPublic path="/kayakdashboardpublic" />
           {/* <NotFound default /> */}
         </Router>
         {/* <Cards /> */}

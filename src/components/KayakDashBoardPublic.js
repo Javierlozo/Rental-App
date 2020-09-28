@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import CameraIcon from "@material-ui/icons/PhotoCamera";
-import SurfCard from "./SurfCard";
+import KayakCardPublic from "./KayakCardPublic";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "160px",
     // backgroundColor: theme.palette.background.paper,
     backgroundColor: "lightgrey",
-    padding: theme.spacing(2, 0, 2),
+    padding: theme.spacing(4, 0, 4),
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -49,25 +49,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MyItems() {
+export default function KayakDashBoardPublic({ setSignedInUser }) {
   const classes = useStyles();
 
-  const [Cards, setCards] = useState([]);
+  const [kayakCards, setKayakCards] = useState([]);
 
   useEffect(() => {
-    async function getCards() {
+    async function getData() {
       const response = await axios.get(
-        `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/cardsbyuser?username=luisloart@gmail.com`
+        `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/kayakcards`
       );
-      setCards(response.data.message);
-      console.log(response.data.message[0]);
+      console.log(response);
+      setKayakCards(response.data.message);
+      console.log(kayakCards);
+      console.log(signInForm.username);
+      console.log(signedInUser);
     }
-    getCards();
+    getData();
   }, []);
-
-  function surfboardStepper() {
-    navigate("/surfstepper");
-  }
 
   return (
     <div>
@@ -84,34 +83,23 @@ export default function MyItems() {
                 color="textPrimary"
                 gutterBottom
               >
-                My items
+                Kayaks for rent
               </Typography>
               <div className={classes.heroButtons}>
-                <Grid container spacing={2} justify="center">
-                  <Grid item>
-                    <Button
-                      style={{ backgroundColor: "grey" }}
-                      variant="contained"
-                      color="primary"
-                      onClick={surfboardStepper}
-                    >
-                      Add a rental
-                    </Button>
-                  </Grid>
-                </Grid>
+                <Grid container spacing={2} justify="center"></Grid>
               </div>
             </Container>
           </div>
           <Container className={classes.cardGrid} maxWidth="md">
             {/* End hero unit */}
             <Grid container spacing={3}>
-              {Cards.map((surfboardCards) => {
+              {kayakCards.map((kayakCards) => {
                 return (
                   <Grid item xs={6}>
-                    <SurfCard
-                      key={surfboardCards.username}
-                      surfboardCards={surfboardCards}
-                    ></SurfCard>
+                    <KayakCardPublic
+                      key={kayakCards.id}
+                      kayakCards={kayakCards}
+                    ></KayakCardPublic>
                   </Grid>
                 );
               })}
