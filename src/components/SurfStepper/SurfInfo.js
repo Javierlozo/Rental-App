@@ -33,7 +33,7 @@ export default function SurfInfo({ addForm, setAddForm }) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     cost: "",
-    name: "hai",
+    group: "",
   });
 
   return (
@@ -131,6 +131,26 @@ export default function SurfInfo({ addForm, setAddForm }) {
             <option value={"$30/day"}>$30/day</option>
             <option value={"$40/day"}>$40/day</option>
             <option value={"$50/day"}>$50/day</option>
+          </Select>
+        </FormControl>
+        <FormControl variant="outlined" className={classes.formControl}>
+          <InputLabel htmlFor="outlined-age-native-simple">Group</InputLabel>
+          <Select
+            onChange={(e) =>
+              setAddForm({ ...addForm, groupid: e.target.value })
+            }
+            native
+            value={state.age}
+            label="Group"
+            inputProps={{
+              name: "Group",
+              id: "outlined-age-native-simple",
+            }}
+          >
+            <option aria-label="None" value="" />
+            <option value={"Surfboards"}>Surfboards</option>
+            <option value={"Kayaks"}>Kayaks</option>
+            <option value={"Bikes"}>Bikes</option>
           </Select>
         </FormControl>
       </div>

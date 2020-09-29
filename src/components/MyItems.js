@@ -14,6 +14,7 @@ import axios from "axios";
 import { navigate } from "@reach/router";
 import signInForm from "../App";
 import { signedInUser } from "react";
+import KayakCard from "./KayakCard";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -57,7 +58,7 @@ export default function MyItems() {
   useEffect(() => {
     async function getCards() {
       const response = await axios.get(
-        `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/cardsbyuser?username=luisloart@gmail.com`
+        `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/cardsbyuser`
       );
       setCards(response.data.message);
       console.log(response.data.message[0]);
@@ -105,13 +106,18 @@ export default function MyItems() {
           <Container className={classes.cardGrid} maxWidth="md">
             {/* End hero unit */}
             <Grid container spacing={3}>
-              {Cards.map((surfboardCards) => {
+              {Cards.map((surfboardCards, kayakCards) => {
                 return (
                   <Grid item xs={6}>
                     <SurfCard
-                      key={surfboardCards.username}
+                      key={surfboardCards.id}
                       surfboardCards={surfboardCards}
                     ></SurfCard>
+                    <br></br>
+                    <KayakCard
+                      key={kayakCards.id}
+                      kayakCards={kayakCards}
+                    ></KayakCard>
                   </Grid>
                 );
               })}

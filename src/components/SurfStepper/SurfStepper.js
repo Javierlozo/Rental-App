@@ -55,6 +55,7 @@ export default function SurfStepper() {
     title: "",
     description: "",
     rentcost: "",
+    groupid: "",
     s3uuid: undefined,
   });
   console.log(addForm);
@@ -111,16 +112,19 @@ export default function SurfStepper() {
 
   async function handleUploadCard({ signInForm }) {
     async function uploadToSql(uuid) {
+      console.log(
+        `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/${addForm.groupid}`
+      );
       console.log("upload to mysql");
       return await axios({
         method: "post",
-        url:
-          "https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcard",
+        url: `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/${addForm.groupid}`,
         data: {
           username: addForm.username,
           title: addForm.title,
           description: addForm.description,
           rentcost: addForm.rentcost,
+          groupid: addForm.groupid,
           s3uuid: uuid,
         },
       });
