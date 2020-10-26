@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/React-App/static/css/main.82ffe315.chunk.css",
+    "main.js": "/React-App/static/js/main.8555a0cd.chunk.js",
+    "main.js.map": "/React-App/static/js/main.8555a0cd.chunk.js.map",
+    "runtime-main.js": "/React-App/static/js/runtime-main.1cb7a00a.js",
+    "runtime-main.js.map": "/React-App/static/js/runtime-main.1cb7a00a.js.map",
+    "static/js/2.36d8ffe4.chunk.js": "/React-App/static/js/2.36d8ffe4.chunk.js",
+    "static/js/2.36d8ffe4.chunk.js.map": "/React-App/static/js/2.36d8ffe4.chunk.js.map",
+    "index.html": "/React-App/index.html",
+    "precache-manifest.4035c3323d801a4e9c70114a578a9c16.js": "/React-App/precache-manifest.4035c3323d801a4e9c70114a578a9c16.js",
+    "service-worker.js": "/React-App/service-worker.js",
+    "static/css/main.82ffe315.chunk.css.map": "/React-App/static/css/main.82ffe315.chunk.css.map",
+    "static/js/2.36d8ffe4.chunk.js.LICENSE.txt": "/React-App/static/js/2.36d8ffe4.chunk.js.LICENSE.txt",
+    "static/media/Bike1.jpg": "/React-App/static/media/Bike1.f343ffa5.jpg",
+    "static/media/Bike3.jpg": "/React-App/static/media/Bike3.31cbe062.jpg",
+    "static/media/Kayak.jpg": "/React-App/static/media/Kayak.18d65fcc.jpg",
+    "static/media/Kayak2.jpg": "/React-App/static/media/Kayak2.f14ab2d4.jpg",
+    "static/media/LogIn.jpg": "/React-App/static/media/LogIn.76480b21.jpg",
+    "static/media/Logo.png": "/React-App/static/media/Logo.d12778bd.png",
+    "static/media/Notfound.jpg": "/React-App/static/media/Notfound.cb9f5581.jpg",
+    "static/media/SignUp2.jpg": "/React-App/static/media/SignUp2.6884588d.jpg",
+    "static/media/Surf1.jpg": "/React-App/static/media/Surf1.e0a8d50e.jpg",
+    "static/media/Surf2.jpg": "/React-App/static/media/Surf2.61c670e9.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1cb7a00a.js",
+    "static/js/2.36d8ffe4.chunk.js",
+    "static/css/main.82ffe315.chunk.css",
+    "static/js/main.8555a0cd.chunk.js"
+  ]
+}
