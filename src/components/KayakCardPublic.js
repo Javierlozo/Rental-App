@@ -56,7 +56,7 @@ export default function KayakCardPublic({ kayakCards }) {
       <CardHeader title={kayakCards.title} subheader={kayakCards.rentcost} />
       <CardMedia
         className={classes.media}
-        image="https://source.unsplash.com/random"
+        image={kayakCards.s3uuid}
         title={kayakCards.title}
       />
       <CardContent>

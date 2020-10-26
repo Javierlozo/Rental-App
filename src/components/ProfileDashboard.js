@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
   root: {},
 }));
 
-export default function ProfileDashBoard({ className, ...rest }) {
+export default function ProfileDashBoard({ className, signUpForm }) {
   const classes = useStyles();
 
   return (
@@ -38,7 +38,7 @@ export default function ProfileDashBoard({ className, ...rest }) {
                 name="firstName"
                 // onChange={handleChange}
                 required
-                // value={values.firstName}
+                value="Luis"
                 variant="outlined"
               />
             </Grid>
@@ -46,10 +46,10 @@ export default function ProfileDashBoard({ className, ...rest }) {
               <TextField
                 fullWidth
                 label="Last name"
-                name="lastName"
+                name="Lozoya"
                 // onChange={handleChange}
                 required
-                // value={values.lastName}
+                value="Lozoya"
                 variant="outlined"
               />
             </Grid>
@@ -60,7 +60,7 @@ export default function ProfileDashBoard({ className, ...rest }) {
                 name="email"
                 // onChange={handleChange}
                 required
-                // value={values.email}
+                value="luisloart@gmail.com"
                 variant="outlined"
               />
             </Grid>

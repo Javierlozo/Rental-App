@@ -111,7 +111,7 @@ export default function SignUpOnePage() {
       );
       if (response === "SUCCESS") {
         uploadToSql();
-        navigate("/");
+        navigate("/login");
       }
     } catch (error) {
       console.log(error);

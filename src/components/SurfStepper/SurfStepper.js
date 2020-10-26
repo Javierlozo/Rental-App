@@ -132,7 +132,7 @@ export default function SurfStepper() {
     try {
       const myUuid = uuid();
       Storage.put(
-        `${addForm.username}/surfboardpics/${myUuid}.png`,
+        `${addForm.username}/${addForm.groupid}/${myUuid}.png`,
         // `profilepics/${myUuid}.png`,
         addForm.s3uuid,
         {

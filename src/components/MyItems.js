@@ -13,7 +13,6 @@ import Link from "@material-ui/core/Link";
 import axios from "axios";
 import { navigate } from "@reach/router";
 import signInForm from "../App";
-import { signedInUser } from "react";
 import KayakCard from "./KayakCard";
 
 const useStyles = makeStyles((theme) => ({
@@ -50,18 +49,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MyItems() {
+export default function MyItems({ signedInUser }) {
   const classes = useStyles();
 
-  const [Cards, setCards] = useState([]);
+  const [surfboardCards, setSurfboardCards] = useState([]);
 
   useEffect(() => {
     async function getCards() {
       const response = await axios.get(
         `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/cardsbyuser`
       );
-      setCards(response.data.message);
+      setSurfboardCards(response.data.message);
       console.log(response.data.message[0]);
+      console.log(signedInUser);
     }
     getCards();
   }, []);
@@ -106,18 +106,17 @@ export default function MyItems() {
           <Container className={classes.cardGrid} maxWidth="md">
             {/* End hero unit */}
             <Grid container spacing={3}>
-              {Cards.map((surfboardCards, kayakCards) => {
+              {surfboardCards.map((surfboardCards) => {
                 return (
                   <Grid item xs={6}>
                     <SurfCard
                       key={surfboardCards.id}
                       surfboardCards={surfboardCards}
                     ></SurfCard>
-                    <br></br>
-                    <KayakCard
+                    {/* <KayakCard
                       key={kayakCards.id}
                       kayakCards={kayakCards}
-                    ></KayakCard>
+                    ></KayakCard> */}
                   </Grid>
                 );
               })}

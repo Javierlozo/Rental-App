@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 1000,
   },
   media: {
-    height: 0,
+    height: 300,
     paddingTop: "56.25%", // 16:9
   },
   expand: {
@@ -54,7 +54,7 @@ export default function SurfCard({ surfboardCards }) {
       return await axios({
         method: "delete",
         url:
-          "https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcard",
+          "https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboard",
         data: {
           cardid: surfboardCards.id,
         },
@@ -96,7 +96,7 @@ export default function SurfCard({ surfboardCards }) {
       />
       <CardMedia
         className={classes.media}
-        image="https://source.unsplash.com/random"
+        image={surfboardCards.s3uuid}
         title={surfboardCards.title}
       />
       <CardContent>

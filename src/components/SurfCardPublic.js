@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 1000,
   },
   media: {
-    height: 0,
+    height: 300,
     paddingTop: "56.25%", // 16:9
   },
   expand: {
@@ -59,7 +59,7 @@ export default function SurfCardPublic({ surfboardCards }) {
       />
       <CardMedia
         className={classes.media}
-        image="https://source.unsplash.com/random"
+        image={surfboardCards.s3uuid}
         title={surfboardCards.title}
       />
       <CardContent>
