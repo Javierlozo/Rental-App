@@ -1,10 +1,8 @@
 // import { withAuthenticator } from "@aws-amplify/ui-react";
 import React, { useEffect, useState } from "react";
 import { Auth } from "aws-amplify";
-import { navigate, Router } from "@reach/router";
+import { navigate } from "@reach/router";
 import "./App.css";
-import SignUpOnePage from "./components/SignUpOnePage";
-import SignInPage from "./components/SignInPage";
 import PrivateRoutes from "./pages/PrivateRoutes";
 import PublicRoutes from "./pages/PublicRoutes";
 

@@ -1,9 +1,5 @@
-import React, { useEffect, useState } from "react";
-import clsx from "clsx";
-import PropTypes from "prop-types";
+import React from "react";
 import ProfilePic from "../components/ProfilePic";
-import axios from "axios";
-import { navigate } from "@reach/router";
 import {
   Box,
   Button,
@@ -13,15 +9,9 @@ import {
   Divider,
   Grid,
   TextField,
-  makeStyles,
 } from "@material-ui/core";
 
-const useStyles = makeStyles(() => ({
-  root: {},
-}));
-
-export default function ProfileDashBoard({ className, signUpForm }) {
-  const classes = useStyles();
+export default function ProfileDashBoard() {
 
   return (
     <>

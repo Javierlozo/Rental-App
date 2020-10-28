@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Button from "@material-ui/core/Button";
-import CameraIcon from "@material-ui/icons/PhotoCamera";
 import KayakCardPublic from "./KayakCardPublic";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
 import axios from "axios";
-import { navigate } from "@reach/router";
-import signInForm from "../App";
-import { signedInUser } from "react";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -21,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
   },
   heroContent: {
     marginTop: "160px",
-    // backgroundColor: theme.palette.background.paper,
     backgroundColor: "lightgrey",
     padding: theme.spacing(4, 0, 4),
   },
@@ -59,11 +50,7 @@ export default function KayakDashBoardPublic({ setSignedInUser }) {
       const response = await axios.get(
         `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/kayakcards`
       );
-      console.log(response);
       setKayakCards(response.data.message);
-      console.log(kayakCards);
-      console.log(signInForm.username);
-      console.log(signedInUser);
     }
     getData();
   }, []);

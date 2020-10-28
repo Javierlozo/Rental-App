@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Button from "@material-ui/core/Button";
-import CameraIcon from "@material-ui/icons/PhotoCamera";
 import SurfCardPublic from "./SurfCardPublic";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
 import axios from "axios";
-import { navigate } from "@reach/router";
-import signInForm from "../App";
-import { signedInUser } from "react";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -59,11 +51,7 @@ export default function SurfDashBoardPublic({ setSignedInUser }) {
       const response = await axios.get(
         `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcards`
       );
-      console.log(response);
       setSurfboardCards(response.data.message);
-      console.log(surfboardCards);
-      console.log(signInForm.username);
-      console.log(signedInUser);
     }
     getData();
   }, []);

@@ -1,9 +1,7 @@
 import React from "react";
 import { Router } from "@reach/router";
-import NotFound from "../components/NotFound";
 import NavBar from "../components/NavBar";
 import Home from "../components/Home";
-import Cards from "../components/Cards";
 import SignUpOnePage from "../components/SignUpOnePage";
 import SignInPage from "../components/SignInPage";
 import SurfDashBoardPublic from "../components/SurfDashBoardPublic";
