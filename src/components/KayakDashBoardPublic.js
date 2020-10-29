@@ -91,6 +91,7 @@ export default function KayakDashBoardPublic({ setSignedInUser }) {
                 );
               })}
             </Grid>
+            <h1>Loading ...</h1>
           </Container>
         </main>
       </React.Fragment>

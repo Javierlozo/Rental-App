@@ -92,6 +92,7 @@ export default function SurfDashBoardPublic({ setSignedInUser }) {
                 );
               })}
             </Grid>
+            <h1>Loading ...</h1>
           </Container>
         </main>
       </React.Fragment>
