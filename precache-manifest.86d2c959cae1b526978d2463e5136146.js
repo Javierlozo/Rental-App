@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9016a31a9650a44ab78eb75f75f06ef3",
+    "revision": "3871eff1eb1911616b6ffc8aba4e506f",
     "url": "/Rental-App/index.html"
   },
   {
-    "revision": "b663f581b30829df561b",
+    "revision": "857a4896b7ae8464fa18",
     "url": "/Rental-App/static/css/main.82ffe315.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Rental-App/static/js/2.33658b2e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b663f581b30829df561b",
-    "url": "/Rental-App/static/js/main.c80a9bfc.chunk.js"
+    "revision": "857a4896b7ae8464fa18",
+    "url": "/Rental-App/static/js/main.92032ae8.chunk.js"
   },
   {
     "revision": "61e8e6661870cdb5360b",

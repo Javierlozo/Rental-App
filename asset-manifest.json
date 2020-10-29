@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Rental-App/static/css/main.82ffe315.chunk.css",
-    "main.js": "/Rental-App/static/js/main.c80a9bfc.chunk.js",
-    "main.js.map": "/Rental-App/static/js/main.c80a9bfc.chunk.js.map",
+    "main.js": "/Rental-App/static/js/main.92032ae8.chunk.js",
+    "main.js.map": "/Rental-App/static/js/main.92032ae8.chunk.js.map",
     "runtime-main.js": "/Rental-App/static/js/runtime-main.6f4282c4.js",
     "runtime-main.js.map": "/Rental-App/static/js/runtime-main.6f4282c4.js.map",
     "static/js/2.33658b2e.chunk.js": "/Rental-App/static/js/2.33658b2e.chunk.js",
     "static/js/2.33658b2e.chunk.js.map": "/Rental-App/static/js/2.33658b2e.chunk.js.map",
     "index.html": "/Rental-App/index.html",
-    "precache-manifest.bcd4334c97c143ef4e4173a44f2e77f6.js": "/Rental-App/precache-manifest.bcd4334c97c143ef4e4173a44f2e77f6.js",
+    "precache-manifest.86d2c959cae1b526978d2463e5136146.js": "/Rental-App/precache-manifest.86d2c959cae1b526978d2463e5136146.js",
     "service-worker.js": "/Rental-App/service-worker.js",
     "static/css/main.82ffe315.chunk.css.map": "/Rental-App/static/css/main.82ffe315.chunk.css.map",
     "static/js/2.33658b2e.chunk.js.LICENSE.txt": "/Rental-App/static/js/2.33658b2e.chunk.js.LICENSE.txt",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.6f4282c4.js",
     "static/js/2.33658b2e.chunk.js",
     "static/css/main.82ffe315.chunk.css",
-    "static/js/main.c80a9bfc.chunk.js"
+    "static/js/main.92032ae8.chunk.js"
   ]
 }
