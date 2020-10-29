@@ -41,7 +41,8 @@ function App() {
   if (!signedInUser) {
     return (
       <div className="App">
-        <PublicRoutes
+        <PublicRoutes 
+          path="/Rental-App"
           signIn={signIn}
           setSignInForm={setSignInForm}
           signInForm={signInForm}

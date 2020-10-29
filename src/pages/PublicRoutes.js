@@ -13,7 +13,7 @@ const PublicRoutes = ({ signIn, setSignInForm, signInForm }) => {
       <div>
         <NavBar />
         <Router>
-          <Home path="/" />
+          <Home path="/Rental-App" />
           <SignInPage
             path="/login"
             signIn={signIn}

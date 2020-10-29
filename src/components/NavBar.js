@@ -94,7 +94,7 @@ export default function NavBar() {
             }}
           >
             <div>
-              <Link to="/">
+              <Link to="/Rental-App">
                 <img src={img} alt="Kayak" height="150px"></img>
               </Link>
             </div>

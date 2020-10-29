@@ -78,7 +78,7 @@ export default function NavBar({ signOut }) {
             }}
           >
             <div>
-              <Link to="/">
+              <Link to="/Rental-App">
                 <img src={img} alt="Kayak" height="150px"></img>
               </Link>
             </div>
