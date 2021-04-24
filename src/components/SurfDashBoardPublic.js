@@ -5,7 +5,8 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import axios from "axios";
+// import axios from "axios";
+import SurfBoardCards from "../SurfBoardCards"
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -44,17 +45,18 @@ const useStyles = makeStyles((theme) => ({
 export default function SurfDashBoardPublic({ setSignedInUser }) {
   const classes = useStyles();
 
-  const [surfboardCards, setSurfboardCards] = useState([]);
+  const [SurfboardCards, setSurfboardCards] = useState([]);
 
-  useEffect(() => {
-    async function getData() {
-      const response = await axios.get(
-        `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcards`
-      );
-      setSurfboardCards(response.data.message);
-    }
-    getData();
-  }, []);
+// AXIOS
+  // useEffect(() => {
+  //   async function getData() {
+  //     const response = await axios.get(
+  //       `https://0y5ptr8ar4.execute-api.us-east-1.amazonaws.com/dev/surfboardcards`
+  //     );
+  //     setSurfboardCards(response.data.message);
+  //   }
+  //   getData();
+  // }, []);
 
   return (
     <div>
@@ -81,18 +83,17 @@ export default function SurfDashBoardPublic({ setSignedInUser }) {
           <Container className={classes.cardGrid} maxWidth="md">
             {/* End hero unit */}
             <Grid container spacing={3}>
-              {surfboardCards.map((surfboardCards) => {
+              {SurfBoardCards.map((SurfBoardCards) => {
                 return (
                   <Grid item xs={6}>
                     <SurfCardPublic
-                      key={surfboardCards.id}
-                      surfboardCards={surfboardCards}
+                      key={SurfBoardCards.id}
+                      surfboardCards={SurfBoardCards}
                     ></SurfCardPublic>
                   </Grid>
                 );
               })}
             </Grid>
-            <h1>Loading ...</h1>
           </Container>
         </main>
       </React.Fragment>
