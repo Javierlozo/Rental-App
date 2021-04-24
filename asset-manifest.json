@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Rental-App/static/css/main.82ffe315.chunk.css",
-    "main.js": "/Rental-App/static/js/main.92032ae8.chunk.js",
-    "main.js.map": "/Rental-App/static/js/main.92032ae8.chunk.js.map",
+    "main.js": "/Rental-App/static/js/main.55c411f8.chunk.js",
+    "main.js.map": "/Rental-App/static/js/main.55c411f8.chunk.js.map",
     "runtime-main.js": "/Rental-App/static/js/runtime-main.6f4282c4.js",
     "runtime-main.js.map": "/Rental-App/static/js/runtime-main.6f4282c4.js.map",
-    "static/js/2.33658b2e.chunk.js": "/Rental-App/static/js/2.33658b2e.chunk.js",
-    "static/js/2.33658b2e.chunk.js.map": "/Rental-App/static/js/2.33658b2e.chunk.js.map",
+    "static/js/2.8812bf0d.chunk.js": "/Rental-App/static/js/2.8812bf0d.chunk.js",
+    "static/js/2.8812bf0d.chunk.js.map": "/Rental-App/static/js/2.8812bf0d.chunk.js.map",
     "index.html": "/Rental-App/index.html",
-    "precache-manifest.86d2c959cae1b526978d2463e5136146.js": "/Rental-App/precache-manifest.86d2c959cae1b526978d2463e5136146.js",
+    "precache-manifest.32f3ff280ed15fe1e5280dc91771aac7.js": "/Rental-App/precache-manifest.32f3ff280ed15fe1e5280dc91771aac7.js",
     "service-worker.js": "/Rental-App/service-worker.js",
     "static/css/main.82ffe315.chunk.css.map": "/Rental-App/static/css/main.82ffe315.chunk.css.map",
-    "static/js/2.33658b2e.chunk.js.LICENSE.txt": "/Rental-App/static/js/2.33658b2e.chunk.js.LICENSE.txt",
+    "static/js/2.8812bf0d.chunk.js.LICENSE.txt": "/Rental-App/static/js/2.8812bf0d.chunk.js.LICENSE.txt",
     "static/media/Bike1.jpg": "/Rental-App/static/media/Bike1.f343ffa5.jpg",
     "static/media/Bike3.jpg": "/Rental-App/static/media/Bike3.31cbe062.jpg",
     "static/media/Kayak.jpg": "/Rental-App/static/media/Kayak.18d65fcc.jpg",
@@ -24,8 +24,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.6f4282c4.js",
-    "static/js/2.33658b2e.chunk.js",
+    "static/js/2.8812bf0d.chunk.js",
     "static/css/main.82ffe315.chunk.css",
-    "static/js/main.92032ae8.chunk.js"
+    "static/js/main.55c411f8.chunk.js"
   ]
 }
