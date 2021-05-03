@@ -45,7 +45,7 @@ export default function SurfCardPublic({ surfboardCards }) {
       />
       <CardMedia
         className={classes.media}
-        image={surfboardCards.s3uuid}
+        image={surfboardCards.image}
         title={surfboardCards.title}
       />
       <CardContent>

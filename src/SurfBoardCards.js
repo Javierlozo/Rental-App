@@ -1,34 +1,34 @@
 const SurfBoardCards = [
   {
-    title: "Red 6' Surfboard for rent!",
+    title: "6' Surfboard for rent!",
     image:
-      "https://i.ebayimg.com/00/s/NjAwWDYwMA==/z/NoEAAOSwjVVViwnS/$_86.JPG",
-    description: "6' Kayak, perfect for experts",
+    "https://4.bp.blogspot.com/-oYgrgTXnStY/VA16zFz1eAI/AAAAAAAABh0/8sQQr9WX_UA/s1600/_DSC2248.JPG",
+    description: "6' Kayak for the perfect day at the beach",
     rentcost: "$15/day",
     id: 1,
   },
   {
-    title: "8' Long Surfboard",
+    title: "8' Ultimate Longboard Surfboard",
     image:
-      "https://i.guim.co.uk/img/media/a21ddee23df74437f3dd1f00d2889d7fc7e44744/31_0_938_563/master/938.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=287696fd90938b7eaa6d389844a05070",
-    description: "Kayak",
+      "https://cdn.shopify.com/s/files/1/0411/9757/products/Ultimate-Performance-Longboard-Poly-Fiberglass-Electric-Blue-Darkwood-Stringer-Resin-Tint-Deck_600x.jpg?v=1575931611",
+    description: "8′ 6″ Ultimate Longboard Surfboard with Darkwood Stringer and Blue Resin Tint (Poly)",
     rentcost: "$25/day",
     id: 2,
   },
   {
-    title: "Awesome 10' Surfboard for rent!",
+    title: "9′-8″ Velzy Vintage Surfboard",
     image:
-      "https://i.guim.co.uk/img/media/a21ddee23df74437f3dd1f00d2889d7fc7e44744/31_0_938_563/master/938.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=287696fd90938b7eaa6d389844a05070",
-    description: "10' Kayak for rent. It is ideal for beginners. Have a good time!",
+      "https://islandtradersurf.com/wp-content/uploads/2016/09/IMG_1365.jpg",
+    description: "Late 80’s early 90’s very rare velzy. Beautiful.",
     rentcost: "$25/day",
     id: 3,
   },
   {
-    title: "Rent Me! 8' Surfboard",
+    title: "9'-8″ - Jacobs Donald Takayama model longboard (1967)",
     image:
-      "https://i.guim.co.uk/img/media/a21ddee23df74437f3dd1f00d2889d7fc7e44744/31_0_938_563/master/938.jpg?width=620&quality=45&auto=format&fit=max&dpr=2&s=287696fd90938b7eaa6d389844a05070",
-    description: "Kayak",
-    rentcost: "$18/day",
+      "https://www.surfboardhoard.com/wp-content/uploads/2020/02/a222-Takayama-6.jpg",
+    description: "Jacobs Surfboards Donald Takayama model 9’8 longboard made in 1967. All original condition.",
+    rentcost: "$20/day",
     id: 4,
   }
 ];
